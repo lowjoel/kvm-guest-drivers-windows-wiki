@@ -8,7 +8,7 @@
 
 * [git and cr\lf](git-and-cr%5Clf)
 
-* Building the drivers
+* [Building the drivers](Building the drivers)
 
 * Code signing drivers for the Windows 64bit platforms
 
