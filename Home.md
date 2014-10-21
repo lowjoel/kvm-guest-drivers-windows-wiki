@@ -6,7 +6,7 @@
 
 * [Download](http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/) binary drivers
 
-* [git and cr\lf](git and cr\lf)
+* [git and cr\lf](git-and-cr%5Clf)
 
 * Building the drivers
 
