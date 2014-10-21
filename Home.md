@@ -6,11 +6,10 @@
 
 * [Download](http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/) binary drivers
 
-* git and cr\lf
+* [git and cr\lf](git and cr\lf)
 
 * Building the drivers
 
 * Code signing drivers for the Windows 64bit platforms
 
 * [Windows guest drivers debugging](http://www.slideshare.net/YanVugenfirer/windows-guestdebugging-kvmforum2012)
-
