@@ -4,7 +4,7 @@
 
 * [viostor - STORPORT miniport driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/viostor)
 
-* [Download](http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/) binary drivers
+* [Download latest](http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/) binary drivers
 
 * [Download stable](http://alt.fedoraproject.org/pub/alt/virtio-win/stable/) binary drivers
 
