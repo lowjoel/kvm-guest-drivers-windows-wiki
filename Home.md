@@ -14,4 +14,4 @@
 
 * [Windows guest drivers debugging](http://www.slideshare.net/YanVugenfirer/windows-guestdebugging-kvmforum2012)
 
-* [Latest build]
+* [Latest build](Latest build)
