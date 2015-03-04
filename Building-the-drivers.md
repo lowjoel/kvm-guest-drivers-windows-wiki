@@ -4,6 +4,9 @@
 
 * Download and install Visual Studio 2013 (drivers can be also built with Visual Studio 2012 with minor changes) and also download and install Windows 8.1 WDK - http://msdn.microsoft.com/en-US/windows/hardware/gg454513
 
+* Download and install Cryptographic NG SDK v2.0.0 available from Microsoft:
+http://www.microsoft.com/en-us/download/details.aspx?id=1251
+
 ## Building Windows XP, Windows 2003, Windows Vista and Windows 2008 drivers
 
 * Download and install old DDK (Windows 7 DDK) - http://www.microsoft.com/en-us/download/details.aspx?id=11800
