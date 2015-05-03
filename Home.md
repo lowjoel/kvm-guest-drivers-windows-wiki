@@ -8,6 +8,8 @@
 
 * [Download stable](http://alt.fedoraproject.org/pub/alt/virtio-win/stable/) binary drivers
 
+* [Fedora RPM](https://fedoraproject.org/wiki/Windows_Virtio_Drivers) Fedora RPM
+
 * [git and cr\lf](git-and-cr%5Clf)
 
 * [Building the drivers](Building the drivers)
