@@ -8,9 +8,9 @@ and also download and install Windows 8.1 WDK - http://msdn.microsoft.com/en-US/
 
 * Download and install CPDK (Cryptographic Provider Development Kit) v8.0 available from Microsoft:
 https://www.microsoft.com/en-us/download/details.aspx?id=30688
-[Note: After CPDK installation you need to copy the CPDK dir
-to C:\Program Files (x86)\Windows Kits\8.1 from C:\Program Files (x86)\Windows Kits\8.0
-Because by default VS12 $WindowsSdkDir points to C:\Program Files (x86)\Windows Kits\8.1]
+    [Note: After CPDK installation you need to copy the CPDK dir
+    to C:\Program Files (x86)\Windows Kits\8.1 from C:\Program Files (x86)\Windows Kits\8.0
+    Because by default VS12 $WindowsSdkDir points to C:\Program Files (x86)\Windows Kits\8.1]
 
 * Download and install Windows Assessment and Deployment Kit (Windows ADK) for Windows 8.1 Update
 https://www.microsoft.com/en-us/download/details.aspx?id=39982
@@ -23,7 +23,7 @@ http://www.microsoft.com/en-us/download/details.aspx?id=11800
 # How to build?
 
 * Run buildall.bat either for each driver separatly (first build VirtIO library) or buildall.bat in the root directory. The results of builds will be in "Install" directory 
-[Do not try to run from special cmd with VS/DDK environment]
+   [Do not try to run from special cmd with VS/DDK environment]
 
 # Known hints / constainments
 
