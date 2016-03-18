@@ -1,6 +1,6 @@
 # Tools needed for driver build
 
-## Building Windows 8 (Windows 20012) drivers and up
+## Building Windows 8 (Windows 2012) drivers and up
 
 * Download and install Visual Studio 2013 (VS12) 
 (drivers can be also built with Visual Studio 2012 (VS11) with minor changes) 
@@ -23,11 +23,11 @@ http://www.microsoft.com/en-us/download/details.aspx?id=11800
 
 # How to build?
 
-* Run buildall.bat either for each driver separatly (first build VirtIO library) or buildall.bat in the root directory. The results of builds will be in "Install" directory 
+* Run buildall.bat either for each driver separately (first build VirtIO library) or buildall.bat in the root directory. The results of builds will be in "Install" directory 
 
    [Do not try to run from special cmd with VS/DDK environment]
 
-# Known hints / constainments
+# Known hints / constraints
 
 * Paths hard-coded in *.bat or *.vcxproj
 
