@@ -1,4 +1,4 @@
-* Read about [VirtIO](https://github.com/rustyrussell/virtio-spec) interface, find the latest spec [here](docs.oasis-open.org/virtio/virtio/v1.0/virtio-v1.0.html)
+* Read about [VirtIO](https://github.com/rustyrussell/virtio-spec) interface, find the latest spec [here](http://docs.oasis-open.org/virtio/virtio/v1.0/virtio-v1.0.html)
 
 * [kvmnet - NDIS miniport network driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/kvmnet)
 
