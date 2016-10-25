@@ -22,41 +22,41 @@ http://www.microsoft.com/en-us/download/details.aspx?id=11800
 
 # How to build?
 
-* Run buildall.bat either for each driver separately (first build VirtIO library) or buildall.bat in the root directory. The results of builds will be in "Install" directory 
-
-   [Do not try to run from special cmd with VS/DDK environment]
+* Visual Studio build: load and build .sln either for each driver separately or virtio-win.sln in the root directory.
+* Command line build: run buildAll.bat either for each driver separately or buildAll.bat in the root directory. Do not try to run from special cmd with VS/DDK environment. buildAll.bat by default builds the driver(s) for all targets and all architectures. It accepts command line options for more selective builds, see Tools/build.bat for more information. Example: "buildAll.bat Win8 64" will build only Win8 amd64 driver.
+* The results of builds will be in "<driver>\Install" directory
 
 # Known hints / constraints
 
 * Paths hard-coded in *.bat or *.vcxproj
 
-        hard-coded path to VS12:    "C:\Program Files (x86)\Microsoft Visual Studio 12.0"
-        hard-coded path to DDK 7.1: "C:\winddk\7600.16385.1"
-        hard-coded path to Wdf:     "C:\Program Files (x86)\Windows Kits\8.1\Redist\wdf"
+        hard-coded path to VS14:    "C:\Program Files (x86)\Microsoft Visual Studio 14.0"
+        hard-coded path to DDK 7.1: "C:\winddk\7600.16385.1" (can be overriden, see below)
 
 * DDK detection:
 
-        if "%DDKVER%"=="" set DDKVER=7600.16385.1
-        BUILDROOT=C:\WINDDK\%DDKVER%
-        - or -
-        if "%DDKISNTALLROOT%"=="" set DDKISNTALLROOT=C:\WINDDK\
-        set BUILDROOT=%DDKISNTALLROOT%%DDKVER%
+        <!-- Define the legacy DDK directory required for downlevel targets -->
+        <DDKINSTALLROOT Condition="'$(DDKINSTALLROOT)' == ''">C:\WINDDK\</DDKINSTALLROOT>
+        <DDKVER Condition="'$(DDKVER)' == ''">7600.16385.1</DDKVER>
+        <LegacyDDKDir>$(DDKINSTALLROOT)$(DDKVER)</LegacyDDKDir>
 
 * env version variables:
 
-        if "%_BUILD_MAJOR_VERSION_%"=="" set _BUILD_MAJOR_VERSION_=101
-        if "%_BUILD_MINOR_VERSION_%"=="" set _BUILD_MINOR_VERSION_=58000
-        if "%_RHEL_RELEASE_VERSION_%"=="" set _RHEL_RELEASE_VERSION_=61
+        <!-- Second component of driver version -->
+        <_RHEL_RELEASE_VERSION_ Condition="'$(_RHEL_RELEASE_VERSION_)' == ''">6</_RHEL_RELEASE_VERSION_>
+        <!-- Third component of driver version -->
+        <_BUILD_MAJOR_VERSION_ Condition="'$(_BUILD_MAJOR_VERSION_)' == ''">101</_BUILD_MAJOR_VERSION_>
+        <!-- Fourth component of driver version -->
+        <_BUILD_MINOR_VERSION_ Condition="'$(_BUILD_MINOR_VERSION_)' == ''">58000</_BUILD_MINOR_VERSION_>
+        
         STAMPINF_DATE
 
 * SDV/DVL:
 
-        sdv/dvl do not work, but is enable by default
-        set %_BUILD_DISABLE_SDV% to disable
+        sdv/dvl do not work, but is enabled by default
+        SET _BUILD_DISABLE_SDV=Yes to disable
 
 * misc
 
-        NetKVM/NDIS5/VirtIO: special copy of VirtIO
-        
-        pciserial
+        pciserial and fwcfg
                 only inf/cat files, no sources, no comments
