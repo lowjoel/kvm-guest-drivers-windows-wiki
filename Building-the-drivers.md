@@ -24,7 +24,7 @@ http://www.microsoft.com/en-us/download/details.aspx?id=11800
 
 * Visual Studio build: load and build .sln either for each driver separately or virtio-win.sln in the root directory.
 * Command line build: run buildAll.bat either for each driver separately or buildAll.bat in the root directory. Do not try to run from special cmd with VS/DDK environment. buildAll.bat by default builds the driver(s) for all targets and all architectures. It accepts command line options for more selective builds, see Tools/build.bat for more information. Example: "buildAll.bat Win8 64" will build only Win8 amd64 driver.
-* The results of builds will be in "<driver>\Install" directory
+* The results of builds will be in "&lt;driver&gt;\Install" directory
 
 # Known hints / constraints
 
