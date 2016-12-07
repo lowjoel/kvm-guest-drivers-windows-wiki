@@ -9,7 +9,19 @@ There are 2 scenarios when RSC can improve network performance:
 * Host-to-guest data transfer of guest-to-guest data transfer inside the same host. In this setup the data comes to guest system via its TAP device. If transmitting network adapter is able to offload large data segments, they can be moved to receiving side without being fragmented. This requires receiving TAP to enable its TX checksumming and TX LSO capability.
 * Data coming from external network to guest system. In this case there are two network components responsible for segments coalescing: receiving physical NIC and TAP of guest network adapter. Actual coalescing job is executed by the NIC (based on its coalescing setting) and further delivery to guest system is executed via the TAP and requires the same TX checksumming and TX LSO to be enabled.
 
-Example: qemu command-line contains following network configuration:
+### Examples:
+**Query TAP offload configuration**
+
+`ethtool -k <tap name>`
+
+Note: tap name is the parameter passed as name= in -netdev configuration
+
+Typical output:
 
 
+**Query NIC coalescing configuration**
+
+`ethtool -c <nic name>`
+
+Typical output:
 
