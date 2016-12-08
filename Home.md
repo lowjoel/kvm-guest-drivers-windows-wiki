@@ -17,3 +17,5 @@
 * [Windows guest drivers debugging](http://www.slideshare.net/YanVugenfirer/windows-guestdebugging-kvmforum2012)
 
 * [Matching build to source](Matching build to source)
+
+* [RSC]
