@@ -18,4 +18,4 @@
 
 * [Matching build to source](Matching build to source)
 
-* [RSC](netkvm RSC (receive segment coalescing) feature)
+* [NetKvm RSC notes](netkvm RSC (receive segment coalescing) feature)
