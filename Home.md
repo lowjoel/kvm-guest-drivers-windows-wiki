@@ -1,6 +1,8 @@
 * Read about [VirtIO](https://github.com/rustyrussell/virtio-spec) interface, find the latest spec [here](http://docs.oasis-open.org/virtio/virtio/v1.0/virtio-v1.0.html)
 
-* [kvmnet - NDIS miniport network driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/kvmnet)
+* [NetKvm - NDIS miniport network driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/kvmnet)
+
+* [NetKvm RSC notes](netkvm RSC (receive segment coalescing) feature)
 
 * [viostor - STORPORT miniport driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/viostor)
 
@@ -17,5 +19,3 @@
 * [Windows guest drivers debugging](http://www.slideshare.net/YanVugenfirer/windows-guestdebugging-kvmforum2012)
 
 * [Matching build to source](Matching build to source)
-
-* [NetKvm RSC notes](netkvm RSC (receive segment coalescing) feature)
