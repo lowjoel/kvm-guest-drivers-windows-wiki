@@ -7,7 +7,7 @@ RSC is supported by network driver starting from 2012 server (or Win8 client). H
 
 ### RSC-related settings
 There are 2 scenarios when RSC can improve network performance:
-* Host-to-guest data transfer of guest-to-guest data transfer inside the same host. In this setup the data comes to guest system via its TAP device. If transmitting network adapter is able to offload large data segments, they can be moved to receiving side without being fragmented. This requires receiving TAP to enable its TX checksumming and TX LSO capability.
+* Host-to-guest data transfer or guest-to-guest data transfer inside the same host. In this setup the data comes to guest system via its TAP device. If transmitting network adapter is able to offload large data segments, they can be moved to receiving side without being fragmented. This requires receiving TAP to enable its TX checksumming and TX LSO capability.
 * Data coming from external network to guest system. In this case there are two network components responsible for segments coalescing: receiving physical NIC and TAP of guest network adapter. Actual coalescing job is executed by the NIC (based on its coalescing setting) and further delivery to guest system is executed via the TAP and requires the same TX checksumming and TX LSO to be enabled.
 
 ### Examples:
@@ -34,4 +34,4 @@ Typical output:
 `ethtool -c <nic name>`
 
 Typical output:
-* rx-usecs: 3
+* rx-usecs: 3 (This parameter sets maximal time for NIC combine received fragments into large one)
