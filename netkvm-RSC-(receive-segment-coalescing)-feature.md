@@ -15,7 +15,7 @@ There are 2 scenarios when RSC can improve network performance:
 
 `ethtool -k <tap name>`
 
-Note: tap name is the parameter passed as ifname=<name> in -netdev configuration for the tap
+Note: tap name is the parameter passed in qemu command-line as `ifname=<name>` in `-netdev` configuration for the tap
 
 Typical output:
 * **tx-checksumming: on**
