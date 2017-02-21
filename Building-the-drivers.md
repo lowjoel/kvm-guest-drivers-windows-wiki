@@ -5,6 +5,8 @@
 * Download and install Visual Studio 2015 (VS15) 
 and also download and install Windows 8.1 WDK http://msdn.microsoft.com/en-US/windows/hardware/gg454513 and Windows 10 WDK http://go.microsoft.com/fwlink/p/?LinkId=526733. 
 
+* Download and install Windows 10 SDK - https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk
+
 * Download and install CPDK (Cryptographic Provider Development Kit) v8.0 available from Microsoft:
 https://www.microsoft.com/en-us/download/details.aspx?id=30688
 
