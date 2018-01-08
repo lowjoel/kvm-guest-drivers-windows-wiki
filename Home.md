@@ -4,6 +4,8 @@
 
 * [NetKvm RSC notes](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/netkvm-RSC-(receive-segment-coalescing)-feature)
 
+* [NetKVM - WPP tracing](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/NetKVM/Documentation/Tracing.md)
+
 * [viostor - STORPORT miniport driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/viostor)
 
 * [Download latest or stable](https://fedoraproject.org/wiki/Windows_Virtio_Drivers#Direct_download) binary drivers
