@@ -27,7 +27,7 @@ _From 'SDK, libraries and frameworks'_
 
 ### [2] install WDK 1809
 [Download link](https://go.microsoft.com/fwlink/?linkid=2026156)
-* On last step it installs WDK VS2017 extension. If due to some reason this step fails, run it manually from C:\Program Files (x86)\Windows Kits\10\Vsix
+* On last step confirm installing WDK VS2017 extension. If due to some reason this step fails, run it manually from C:\Program Files (x86)\Windows Kits\10\Vsix
 
 ### [3] install WDK for Windows 7 (required to build drivers for legacy OS, i.e. XP, WNET, Vista)
 [Download link (ISO)](https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO)
