@@ -39,6 +39,8 @@ _From 'SDK, libraries and frameworks'_
 
 ### [5] install Microsoft redistributables for VS2015, VS2013, VS2010
 
+### [6] Register VS2017 once (initially it has 30 days limit)
+* Run VS2017, select VC++ environment, go to Help - About Microsoft Visual Studio - License status - Check for an update license - log in with any Microsoft account - the license will be updated
 
 ## (Current using VS2015) Building Windows 8 (Windows 2012) drivers and up
 
