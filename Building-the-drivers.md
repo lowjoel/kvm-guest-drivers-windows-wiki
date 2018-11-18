@@ -1,6 +1,46 @@
 # Tools needed for driver build
 
-## Building Windows 8 (Windows 2012) drivers and up
+## (Coming soon) Building virtio-win drivers (including ARM64) using Visual Studio 2017
+
+### [1] install Visual Studio 2017 Community
+[Download link](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
+
+**Select 'Desktop development with C++'**
+**Add following 'Individual components':**
+
+_From 'Compilers, build tools and runtimes'_
+
+* VC++ 2017 Libs for Spectre (ARM64)
+* VC++ 2017 Libs for Spectre (x86/x64)
+* Windows 8.1 SDK and UCRT SDK
+* Windows XP C++ Support
+* Visual C++ MFC for x86/x64
+* Visual C++ compiler and libraries for ARM64
+
+_From 'SDK, libraries and frameworks'_
+
+* Visual C++ ATL for ARM64, including Spectre mitigation
+* Visual C++ MFC for ARM64, including Spectre mitigation
+* Visual C++ MFC for x86/x64 with Spectre mitigation
+* Windows 10 SDK 10.0.17763.0
+* Windows universal C Runtime
+
+### [2] install WDK 1809
+[Download link](https://go.microsoft.com/fwlink/?linkid=2026156)
+* On last step it installs WDK VS2017 extension. If due to some reason this step fails, run it manually from C:\Program Files (x86)\Windows Kits\10\Vsix
+
+### [3] install WDK for Windows 7 (required to build drivers for legacy OS, i.e. XP, WNET, Vista)
+[Download link (ISO)](https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO)
+* run KitSetup.exe, use C:\WinDDK\7600.16385.1 as installation directory
+
+### [4] install Microsoft Cryptographic Provider Development Kit (CPDK) (required to build virtio-rng, virtio-crypt drivers)
+[Download link](https://download.microsoft.com/download/1/7/6/176909B0-50F2-4DF3-B29B-830A17EA7E38/CPDK_RELEASE_UPDATE/cpdksetup.exe)
+* run cpdksetup.exe
+
+### [5] install Microsoft redistributables for VS2015, VS2013, VS2010
+
+
+## (Current using VS2015) Building Windows 8 (Windows 2012) drivers and up
 
 * Download and install Visual Studio 2015 (VS15) 
 and also download and install Windows 8.1 WDK http://msdn.microsoft.com/en-US/windows/hardware/gg454513 and Windows 10 WDK http://go.microsoft.com/fwlink/p/?LinkId=526733. 
