@@ -59,7 +59,7 @@ https://www.microsoft.com/en-us/download/details.aspx?id=30688
 * Download and install Windows Assessment and Deployment Kit (Windows ADK) for Windows 8.1 Update
 https://www.microsoft.com/en-us/download/details.aspx?id=39982
 
-## Building Windows XP, Windows 2003, Windows Vista, Windows 2008, Windows 7 and Windows 2008R2 drivers
+## (Obsolete) Building Windows XP, Windows 2003, Windows Vista, Windows 2008, Windows 7 and Windows 2008R2 drivers
 
 * Download and install old DDK 7600.16385.1 (Windows 7 DDK) 
 http://www.microsoft.com/en-us/download/details.aspx?id=11800
