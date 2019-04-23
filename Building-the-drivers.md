@@ -1,6 +1,6 @@
 # Tools needed for driver build
 
-## (Coming soon) Building virtio-win drivers (including ARM64) using Visual Studio 2017
+## Building virtio-win drivers (including ARM64) using Visual Studio 2017
 
 ### [1] install Visual Studio 2017 Community
 [Download link](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
@@ -42,7 +42,7 @@ _From 'SDK, libraries and frameworks'_
 ### [6] Register VS2017 once (initially it has 30 days limit)
 * Run VS2017, select your preferred environment (for example C/C++), go to Help - About Microsoft Visual Studio - License status - Check for an updated license - log in with any Microsoft account - the license will be updated
 
-## (Current using VS2015) Building Windows 8 (Windows 2012) drivers and up
+## (Obsolete) Building Windows 8 (Windows 2012) drivers and up
 
 * Download and install Visual Studio 2015 (VS15) 
 and also download and install Windows 8.1 WDK http://msdn.microsoft.com/en-US/windows/hardware/gg454513 and Windows 10 WDK http://go.microsoft.com/fwlink/p/?LinkId=526733. 
