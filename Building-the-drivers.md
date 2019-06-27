@@ -30,6 +30,7 @@ _From 'SDK, libraries and frameworks'_
 * Windows Universal C Runtime
 
 Exported config of working VS2017 setup:
+
 `{`
 	`"version": "1.0",`
 	`"components": [`
