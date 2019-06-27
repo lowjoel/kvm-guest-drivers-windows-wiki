@@ -8,22 +8,53 @@
 **Select 'Desktop development with C++'**
 **Add following 'Individual components':**
 
-_From 'Compilers, build tools and runtimes'_
+_From 'Compilers, build tools, and runtimes'_
 
+* VC++ 2017 Libs for Spectre (ARM)
 * VC++ 2017 Libs for Spectre (ARM64)
-* VC++ 2017 Libs for Spectre (x86/x64)
-* Windows 8.1 SDK and UCRT SDK
-* Windows XP C++ Support
-* Visual C++ MFC for x86/x64
+* VC++ 2017 Libs for Spectre (x86/x64
+* Visual C++ compiler and libraries for ARM
 * Visual C++ compiler and libraries for ARM64
+* Windows Universal CRT SDK 
+* Windows XP Support for C++
 
 _From 'SDK, libraries and frameworks'_
 
-* Visual C++ ATL for ARM64, including Spectre mitigation
-* Visual C++ MFC for ARM64, including Spectre mitigation
-* Visual C++ MFC for x86/x64 with Spectre mitigation
-* Windows 10 SDK 10.0.17763.0
-* Windows universal C Runtime
+* Visual C++ ATL (x86/x64) with Spectre Mitigation
+* Visual C++ ATL for ARM with Spectre Mitigation
+* Visual C++ ATL for ARM64 with Spectre Mitigation
+* Visual C++ MFC for x86/x64 with Spectre Mitigations
+* Visual C++ MFC support for ARM64 with Spectre Mitigation
+* Windows 10 SDK (10.0.17763.0)
+* Windows 8.1 SDK
+* Windows Universal C Runtime
+
+Exported config of working VS2017 setup:
+`{`
+	`"version": "1.0",`
+	`"components": [`
+		`"Microsoft.VisualStudio.Workload.NativeDesktop",`
+		`"microsoft.visualstudio.component.debugger.justintime",`
+		`"microsoft.visualstudio.component.vc.diagnostictools",`
+		`"microsoft.visualstudio.component.vc.cmake.project",`
+		`"microsoft.visualstudio.component.vc.testadapterforboosttest",`
+		`"microsoft.visualstudio.component.vc.testadapterforgoogletest",`
+		`"microsoft.visualstudio.component.windows81sdk",`
+		`"microsoft.visualstudio.componentgroup.nativedesktop.winxp",`
+		`"microsoft.visualstudio.component.vc.atlmfc",`
+		`"microsoft.visualstudio.component.windows10sdk",`
+		`"microsoft.visualstudio.component.vc.atl.arm64.spectre",`
+		`"microsoft.visualstudio.component.vc.atlmfc.spectre",`
+		`"microsoft.visualstudio.component.vc.mfc.arm.spectre",`
+		`"microsoft.visualstudio.component.vc.runtimes.arm.spectre",`
+		`"microsoft.visualstudio.component.vc.runtimes.arm64.spectre",`
+		`"microsoft.visualstudio.component.vc.runtimes.x86.x64.spectre",`
+		`"microsoft.visualstudio.component.vc.atl.arm",`
+		`"microsoft.visualstudio.component.vc.mfc.arm",`
+		`"microsoft.visualstudio.component.vc.mfc.arm64",`
+		`"component.microsoft.windows.driverkit"`
+	`]`
+`}`
 
 ### [2] install WDK 1809
 [Download link](https://go.microsoft.com/fwlink/?linkid=2026156)
