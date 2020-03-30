@@ -69,9 +69,15 @@ Exported config of working VS2017 setup:
 [Download link](https://download.microsoft.com/download/1/7/6/176909B0-50F2-4DF3-B29B-830A17EA7E38/CPDK_RELEASE_UPDATE/cpdksetup.exe)
 * run cpdksetup.exe
 
-### [5] install Microsoft redistributables for VS2015, VS2013, VS2010
+### [5] install WinFsp 2020 (required both to build and use virtio-fs driver)
 
-### [6] Register VS2017 once (initially it has 30 days limit)
+[Download link](https://github.com/billziss-gh/winfsp/releases/download/v1.6/winfsp-1.6.20027.msi)
+
+* run winfsp-1.6.20027.msi and make sure the "Developer" option is checked.
+
+### [6] install Microsoft redistributables for VS2015, VS2013, VS2010
+
+### [7] Register VS2017 once (initially it has 30 days limit)
 * Run VS2017, select your preferred environment (for example C/C++), go to Help - About Microsoft Visual Studio - License status - Check for an updated license - log in with any Microsoft account - the license will be updated
 
 ## (Obsolete) Building Windows 8 (Windows 2012) drivers and up
