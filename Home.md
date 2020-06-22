@@ -6,7 +6,7 @@
 
 * [NetKVM - WPP tracing](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/NetKVM/Documentation/Tracing.md)
 
-* [Virtio-fs - A shared file system] (https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Virtio-fs---A-shared-file-system)
+* [Virtio-fs - A shared file system](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Virtio-fs---A-shared-file-system)
 
 * [All drivers - WPP tracing](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/Documentation/Tracing.md
 )
