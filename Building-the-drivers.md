@@ -78,6 +78,8 @@ Note: if you save the above config as "c:\temp\virtio-win-drivers.vsconfig", you
 
 * run winfsp-1.6.20027.msi and make sure the "Developer" option is checked.
 
+Chocolatey: `choco install -y winfsp`
+
 ### [6] install Microsoft redistributables for VS2015, VS2013, VS2010
 
 ### [7] Register VS2017 once (initially it has 30 days limit)
