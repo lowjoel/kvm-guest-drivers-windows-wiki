@@ -57,8 +57,8 @@ Exported config of working VS2017 setup:
 	`]`
 `}`
 
-Note: if you save the above config as "virtio-win-drivers.vsconfig", you can use this Chocholatey command to setup VS2017 more easily:
-`choco install -y visualstudio2017community --package-parameters "--config c:\temp\win-virtio-drivers.vsconfig"`
+Note: if you save the above config as "c:\temp\virtio-win-drivers.vsconfig", you can use this Chocholatey command to setup VS2017 more easily:
+`choco install -y visualstudio2017community --package-parameters "--config c:\temp\virtio-win-drivers.vsconfig"`
 
 ### [2] install WDK 1809
 [Download link](https://go.microsoft.com/fwlink/?linkid=2026156)
