@@ -52,8 +52,7 @@ Exported config of working VS2017 setup:
 		`"microsoft.visualstudio.component.vc.runtimes.x86.x64.spectre",`
 		`"microsoft.visualstudio.component.vc.atl.arm",`
 		`"microsoft.visualstudio.component.vc.mfc.arm",`
-		`"microsoft.visualstudio.component.vc.mfc.arm64",`
-		`"component.microsoft.windows.driverkit"`
+		`"microsoft.visualstudio.component.vc.mfc.arm64"`
 	`]`
 `}`
 
