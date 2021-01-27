@@ -12,5 +12,6 @@ Below are instructions for setting up EWDK 1809 for building using only MSBuild 
 - start LaunchBuildEnv.cmd
 
 Note: Verified building succeeds with Win8, Win8.1, Win10 x86 and x64, all Release, so far. Sample syntax:
+
 `msbuild .\virtio-win.sln -p:Configuration=Win8.1%20Release -p:Platform="x64"`
 Note: CPDK download is currently unavailable from Microsoft.
