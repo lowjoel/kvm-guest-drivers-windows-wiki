@@ -10,4 +10,5 @@ Below are instructions for setting up EWDK 1809 using only cmd prompt.
 - cpdksetup.exe /features + /quiet
 - start LaunchBuildEnv.cmd
 
+Note: Verified only with Win10 x86 and x64 so far.
 Note: CPDK download is currently unavailable from Microsoft - I am investigating.
