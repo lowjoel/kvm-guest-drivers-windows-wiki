@@ -17,7 +17,9 @@
 
 * [git and cr\lf](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/git-and-cr%5Clf)
 
-* [Building the drivers](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers)
+* [Building the drivers using Enterprise WDK (EWDK) 1809](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-Enterprise-WDK-(EWDK)-1809)
+
+* [Building the drivers using Visual Studio 2017](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-Visual-Studio-2017)
 
 * Code signing drivers for the Windows 64bit platforms
 
