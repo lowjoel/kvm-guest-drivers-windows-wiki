@@ -6,8 +6,8 @@ Below are instructions for setting up EWDK 1809 using only cmd prompt.
 - wget https://download.microsoft.com/download/9/F/9/9F9F709B-C0E6-4B89-90C2-CDE3059C61CF/EWDK_rs5_release_svc_prod2_17763_190129-1747.iso
 - powershell mount-diskimage -imagepath "C:\EWDK_rs5_release_svc_prod2_17763_190129-1747.iso"
 - powershell "$driveletter = (get-diskimage C:\EWDK_rs5_release_svc_prod2_17763_190129-1747.iso | get-volume).driveletter" ; robocopy $driveletter`:\ c`:\ /E"
-#- wget https://download.microsoft.com/download/1/7/6/176909B0-50F2-4DF3-B29B-830A17EA7E38/CPDK_RELEASE_UPDATE/cpdksetup.exe -outfile cpdksetup.exe
-#- cpdksetup.exe /features + /quiet
+- wget https://download.microsoft.com/download/1/7/6/176909B0-50F2-4DF3-B29B-830A17EA7E38/CPDK_RELEASE_UPDATE/cpdksetup.exe -outfile cpdksetup.exe
+- cpdksetup.exe /features + /quiet
 - start LaunchBuildEnv.cmd
 
 Note: CPDK download is currently unavailable from Microsoft - I am investigating.
