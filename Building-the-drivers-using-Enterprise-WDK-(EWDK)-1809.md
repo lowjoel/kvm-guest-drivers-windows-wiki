@@ -6,8 +6,6 @@ Below are instructions for setting up EWDK 1809 for building using only MSBuild 
 - wget https://download.microsoft.com/download/9/F/9/9F9F709B-C0E6-4B89-90C2-CDE3059C61CF/EWDK_rs5_release_svc_prod2_17763_190129-1747.iso
 - powershell mount-diskimage -imagepath "C:\EWDK_rs5_release_svc_prod2_17763_190129-1747.iso"
 - powershell "$driveletter = (get-diskimage C:\EWDK_rs5_release_svc_prod2_17763_190129-1747.iso | get-volume).driveletter" ; robocopy $driveletter`:\ c`:\ /E"
-- wget https://download.microsoft.com/download/1/7/6/176909B0-50F2-4DF3-B29B-830A17EA7E38/CPDK_RELEASE_UPDATE/cpdksetup.exe -outfile cpdksetup.exe
-- cpdksetup.exe /features + /quiet
 - set MSBuildEmitSolution=1
 - start LaunchBuildEnv.cmd
 
@@ -15,5 +13,4 @@ Note1: Verified building succeeds with Win8, Win8.1, Win10 x86 and x64, all Rele
 
 `msbuild .\virtio-win.sln -p:Configuration=Win8.1%20Release -p:Platform="x64"`
 
-Note2: CPDK download is currently unavailable from Microsoft.
-Note3: For pre-Win8 building only UI-based Windows works, due to Win7 DDK dependencies.
+Note2: For pre-Win8 building only UI-based Windows works, due to Win7 DDK dependencies.
