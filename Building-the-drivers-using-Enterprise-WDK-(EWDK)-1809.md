@@ -14,3 +14,4 @@ Note1: Verified building succeeds with Win8, Win8.1, Win10 x86 and x64, all Rele
 `msbuild .\virtio-win.sln -p:Configuration=Win8.1%20Release -p:Platform="x64"`
 
 Note2: For pre-Win8 building only UI-based Windows works, due to Win7 DDK dependencies.
+Note3: Windows 8 and before building requires CPDK and winfsp to be installed additionally.
