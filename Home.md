@@ -21,6 +21,8 @@
 
 * [Building the drivers using Visual Studio 2017](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-Visual-Studio-2017)
 
+* [Building the drivers - Customization]
+
 * Code signing drivers for the Windows 64bit platforms
 
 * [Submitting patches](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Submitting-patches)
