@@ -10,7 +10,7 @@ Build for legacy operating systems does not make too much sense today. In order 
 
 **VIRTIO_WIN_NO_LEGACY=1**
 
-### generate INF files compatible with DIFx framework
+### Generate INF files compatible with DIFx framework
 By default the build generate INF files with exact OS ornamentation, i.e drivers for Win10 contain suffix ".10.0".
 
 For example "%VENDOR% = NetKVM, NTamd64.10.0"
