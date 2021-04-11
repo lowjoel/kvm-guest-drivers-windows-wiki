@@ -17,7 +17,7 @@
 
 * [git and cr\lf](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/git-and-cr%5Clf)
 
-* [Building the drivers using Enterprise WDK (EWDK) 1903](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-EWDK-1903)
+* [(Soon) Building the drivers using Enterprise WDK (EWDK) 1903](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-EWDK-1903)
 
 * [Building the drivers using Enterprise WDK (EWDK) 1809](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Building-the-drivers-using-Enterprise-WDK-(EWDK)-1809)
 
