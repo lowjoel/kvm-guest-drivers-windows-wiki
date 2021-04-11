@@ -1,5 +1,12 @@
 Recommended environment for drivers build: EWDK 1903
 
+Building of drivers for following operating systems is not supported by batch build procedure:
+* Windows XP / Server 2003
+* Windows Vista / Server 2008
+
+Building drivers for Windows 7 / Server 2008R2 is optional.
+Use VIRTIO_WIN_BUILD_LEGACY=Win7 to include them into the build
+
 File to download and mount
 * EWDK 1903 ISO https://docs.microsoft.com/en-us/legal/windows/hardware/enterprise-wdk-license-2019
 
@@ -9,5 +16,7 @@ Components to install
 * .NET Framework version 4.7.2 (required by EWDK)
 * Visual Studio 2014 redistributable x86 (required by EWDK/SDV)
 
-
+Build procedure:
+* Run buildAll.bat (for complete build including SDV)
+* Run build_AllNoSdv.bat (to build everything excluding SDV)
 
