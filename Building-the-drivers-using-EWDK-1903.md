@@ -16,7 +16,7 @@ File to download and mount
 Components to install
 * WinFsp https://github.com/billziss-gh/sshfs-win/releases/download/v3.5.20024/sshfs-win-3.5.20024-x64.msi
 * Cryprographic provider development kit (CPDK) Windows 10 https://www.microsoft.com/en-us/download/details.aspx?id=30688
-** Note: The kit was updated, latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...
+_(Note: The kit was updated, latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...)_
 * .NET Framework version 4.6.1 (required by EWDK)
 * Visual Studio 2013 redistributable x86 (required by EWDK/SDV)
 
