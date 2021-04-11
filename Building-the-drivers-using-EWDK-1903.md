@@ -10,8 +10,9 @@ Use VIRTIO_WIN_BUILD_LEGACY=Win7 to include them into the build.
 Note: latest tag that support building of drivers for legacy operating systems:
 https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
 
-File to download and mount
+File to download and (optionally) mount
 * EWDK 1903 ISO https://go.microsoft.com/fwlink/p/?linkid=2086136
+* If the file present but not mounted set EWDK_ISO_FILE=<path_to_file>
 
 Components to install
 * WinFsp https://github.com/billziss-gh/sshfs-win/releases/download/v3.5.20024/sshfs-win-3.5.20024-x64.msi
