@@ -15,7 +15,7 @@ File to download and mount
 
 Components to install
 * WinFsp https://github.com/billziss-gh/sshfs-win/releases/download/v3.5.20024/sshfs-win-3.5.20024-x64.msi
-* Cryprographic provider SDK
+* Cryprographic provider development kit (CPDK) https://www.microsoft.com/en-us/download/details.aspx?id=30688
 * .NET Framework version 4.6.1 (required by EWDK)
 * Visual Studio 2014 redistributable x86 (required by EWDK/SDV)
 
