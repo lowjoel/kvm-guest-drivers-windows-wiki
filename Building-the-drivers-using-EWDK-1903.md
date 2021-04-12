@@ -12,7 +12,7 @@ https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-
 
 File to download and (optionally) mount
 * EWDK 1903 ISO https://go.microsoft.com/fwlink/p/?linkid=2086136
-* If the file present but not mounted set EWDK_ISO_FILE=<path_to_file>
+* If the file present but not mounted set EWDK_ISO_FILE=<path_to_file> (or place the file under c:\ - this is a default)
 
 Components to install
 * WinFsp https://github.com/billziss-gh/sshfs-win/releases/download/v3.5.20024/sshfs-win-3.5.20024-x64.msi
