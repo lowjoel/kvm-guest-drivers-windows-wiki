@@ -15,7 +15,7 @@ File to download and (optionally) mount
 * If the file present but not mounted set EWDK_ISO_FILE=<path_to_file> (or place the file under c:\ - this is a default)
 
 Components to install
-* WinFsp https://github.com/billziss-gh/winfsp/releases/download/v1.8/winfsp-1.8.20304.msi
+* WinFsp https://github.com/billziss-gh/winfsp/releases/download/v1.8/winfsp-1.8.20304.msi (Core + Developer + Kernel Developer)
 * Cryprographic provider development kit (CPDK) Windows 10 https://www.microsoft.com/en-us/download/details.aspx?id=30688
 _(Note: The kit was updated, latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...)_
 * .NET Framework version 4.6.1 (required by EWDK)
