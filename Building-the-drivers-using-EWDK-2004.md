@@ -19,9 +19,7 @@ _(Note: The kit was updated, latest one was published 3/22/2021 and installs hea
 
 Preparing the environment:
 
-_Note: The EWDK 2004 has a problem when run dvl.exe to create DVL.XML file._
-
-_As a workaround we do not use mounted EWDK 2004 ISO but copy it to the local drive and modify_
+_Note: The EWDK 2004 has a problem when run dvl.exe to create DVL.XML file. As a workaround we do not use mounted EWDK 2004 ISO but copy it to the local drive and modify_
 1. Download EWDK 2004 ISO https://go.microsoft.com/fwlink/p/?linkid=2128902
 * mount it (for example as E:)
 * copy entire content to local directory (for example, c:\2004): xcopy /e e:\\* c:\2004
