@@ -32,7 +32,7 @@ _As a workaround we do not use mounted EWDK 2004 ISO but copy it to the local dr
 * copy /y e:\Program Files\Windows Kits\10\Tools\dvl\* %EWDK_DIR%\Program Files\Windows Kits\10\Tools\dvl 
 * unmount and delete EWDK 1903 ISO file
 3. (Only if the build procedure **is not able** to populate files under %EWDK_DIR%) Run once the Tools\SetVsEnv.bat from virtio-win repository.
-_(The build procedure will try to copy several required binaries from EWDK 2004 tree to c:\2004\BuildEnv.)_
+_(The build procedure will try to copy several required binaries from EWDK 2004 tree to %EWDK_DIR%\BuildEnv if required.)_
 
 Build procedure:
 * Run buildAll.bat (for complete build including SDV)
