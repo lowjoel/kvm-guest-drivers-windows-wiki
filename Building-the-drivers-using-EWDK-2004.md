@@ -24,12 +24,12 @@ _Note: The EWDK 2004 has a problem when run dvl.exe to create DVL.XML file._
 _As a workaround we do not use mounted EWDK 2004 ISO but copy it to the local drive and modify_
 1. Download EWDK 2004 ISO https://go.microsoft.com/fwlink/p/?linkid=2128902
 * mount it (for example as E:)
-* copy entire content to local directory (for example, c:\2004): xcopy /e e:\* c:\2004
+* copy entire content to local directory (for example, c:\2004): xcopy /e e:\\* c:\2004
 * If you use different directory than c:\2004, set EWDK_DIR=<Copy_Of_EWDK>
 * unmount and delete EWDK 2004 ISO file
 2. Download EWDK 1903 ISO https://go.microsoft.com/fwlink/p/?linkid=2086136
 * mount it (for example as E:)
-* copy /y e:\Program Files\Windows Kits\10\Tools\dvl\* %EWDK_DIR%\Program Files\Windows Kits\10\Tools\dvl 
+* copy /y e:\Program Files\Windows Kits\10\Tools\dvl\\* %EWDK_DIR%\Program Files\Windows Kits\10\Tools\dvl 
 * unmount and delete EWDK 1903 ISO file
 3. (Only if the build procedure **is not able** to populate files under %EWDK_DIR%) Run once the Tools\SetVsEnv.bat from virtio-win repository.
 _(The build procedure will try to copy several required binaries from EWDK 2004 tree to %EWDK_DIR%\BuildEnv if required.)_
