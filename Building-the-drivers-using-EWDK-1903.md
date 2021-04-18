@@ -18,7 +18,7 @@ Components to install
 * WinFsp https://github.com/billziss-gh/winfsp/releases/download/v1.8/winfsp-1.8.20304.msi (Core + Developer + Kernel Developer)
 * Cryprographic provider development kit (CPDK) Windows 10 https://www.microsoft.com/en-us/download/details.aspx?id=30688
 _(Note: The kit was updated, latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...)_
-* .NET Framework version 4.8
+* .NET Framework version 4.8 https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer
 * Visual Studio 2013 redistributable x86 (required by EWDK/SDV)
 
 Build procedure:
