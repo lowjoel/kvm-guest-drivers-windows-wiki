@@ -19,7 +19,8 @@ Components to install
 * Cryprographic provider development kit (CPDK) Windows 10 https://www.microsoft.com/en-us/download/details.aspx?id=30688
 _(Note: The kit was updated, latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...)_
 * .NET Framework version 4.8 https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer
-* Visual Studio 2013 redistributable x86 (required by EWDK/SDV)
+* Visual Studio 2013 redistributable x86 (required by EWDK/SDV) [KB 3138367](http://download.microsoft.com/download/c/c/2/cc2df5f8-4454-44b4-802d-5ea68d086676/vcredist_x86.exe)
+
 
 Build procedure:
 * Run buildAll.bat (for complete build including SDV)
