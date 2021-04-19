@@ -25,15 +25,15 @@ _(Note: The kit was updated, latest one was published 3/22/2021 and installs hea
 Preparing the environment:
 1. Download EWDK 1903 ISO https://go.microsoft.com/fwlink/p/?linkid=2086136
 * mount it (for example as E:)
-* copy entire content to local directory (for example c:\ewdk1903): "mkdir c:\ewdk1903", "copy /e e:\* c:\ewdk1903"
+* copy entire content to local directory (for example c:\ewdk1903): `mkdir c:\ewdk1903 && xcopy /e e:\* c:\ewdk1903`
 * unmount and delete EWDK 1903 ISO file
-* if the name of the local directory is different from the default (c:\ewdk1903) set EWDK1903_DIR=<Copy_Of_EWDK 1903>
+* if the name of the local directory is different from the default (c:\ewdk1903) `set EWDK1903_DIR=<Copy_Of_EWDK 1903>`
 
 2. Download EWDK 2004 ISO https://go.microsoft.com/fwlink/p/?linkid=2128902
 * mount it (for example as E:)
-* copy entire content to local directory (for example c:\ewdk2004): "mkdir c:\ewdk2004", "copy /e e:\* c:\ewdk2004"
+* copy entire content to local directory (for example c:\ewdk2004): `mkdir c:\ewdk2004 && xcopy /e e:\* c:\ewdk2004`
 * unmount and delete EWDK 2004 ISO file
-* if the name of the local directory is different from the default (c:\ewdk2004) set EWDK2004_DIR=<Copy_Of_EWDK 2004>
+* if the name of the local directory is different from the default (c:\ewdk2004) `set EWDK2004_DIR=<Copy_Of_EWDK 2004>`
 * replace the DVL files of EWDK 2004 by ones of EWDK 1903 
 * copy /y c:\ewdk1903\Program Files\Windows Kits\10\Tools\dvl\\* c:\ewdk2004\Program Files\Windows Kits\10\Tools\dvl
 
