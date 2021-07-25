@@ -35,3 +35,9 @@ Typical output:
 
 Typical output:
 * rx-usecs: 3 (This parameter sets maximal time for NIC combine received fragments into large one)
+
+### HCK RSC tests
+
+HCK "RSC tests" is currently not part of any playlist.
+For engineering purposes in order to pass this specific test and **only for this specific test** use a special addition to virtio-net-pci command line as follows: "**guest_rsc_ext=on,rsc_interval=1000000**". Note that this device parameter is not compatible with any other test as well as with regular netkvm functionality.
+
