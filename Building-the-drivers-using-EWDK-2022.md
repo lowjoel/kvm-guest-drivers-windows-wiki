@@ -1,8 +1,8 @@
 Recommended environment for drivers build: EWDK 2022
 
 **Note:**
-* **At the moment of transition to EWDK, the drivers are built using EWDK 2022.**
-* **Currently usage of EWDK 2022 is blocked by the problem of building many drivers with SDV (static driver verifier), CodeQL analysis error, ARM64 build error.**
+* **At the moment of transition to EWDK, the drivers will be built using EWDK 2022.**
+* **Currently usage of EWDK 2022 is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
 
 The building of drivers for the following operating systems is not supported by the batch build procedure:
 * Windows XP / Server 2003
