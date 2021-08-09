@@ -1,8 +1,8 @@
-Recommended environment for drivers build: EWDK 2022
+Recommended environment for drivers build: Windows 11 EWDK
 
 **Note:**
-* **At the moment of transition to EWDK, the drivers will be built using EWDK 2022.**
-* **Currently usage of EWDK 2022 is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
+* **At the moment of transition to EWDK, the drivers will be built using Windows 11 EWDK.**
+* **Currently usage of Windows 11 EWDK is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
 
 The building of drivers for the following operating systems is not supported by the batch build procedure:
 * Windows XP / Server 2003
@@ -23,11 +23,11 @@ _(Note: The kit was updated, the latest one was published 3/22/2021 and installs
 * CodeQL tool for the Static Tools Logo Test
 
 Preparing the environment:
-1. Download EWDK 2022 ISO https://go.microsoft.com/fwlink/?linkid=2163981
+1. Download Windows 11 EWDK ISO https://go.microsoft.com/fwlink/?linkid=2165855
 * mount it (for example as E:)
-* copy entire content to local directory (for example c:\ewdk2022): `mkdir c:\ewdk2022 && xcopy /e e:\* c:\ewdk2022`
-* unmount and delete EWDK 2022 ISO file
-* if the name of the local directory is different from the default (c:\ewdk2022) `set EWDK2022_DIR=<Copy_Of_EWDK 2022>`
+* copy entire content to local directory (for example c:\ewdk11): `mkdir c:\ewdk2022 && xcopy /e e:\* c:\ewdk11`
+* unmount and delete Windows 11 EWDK ISO file
+* if the name of the local directory is different from the default (c:\ewdk11) `set EWDK11_DIR=<Copy_Of_EWDK 11>`
 
 2. [CodeQL Windows Setup](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/static-tools-and-codeql#codeql-windows-setup)
 * mkdir C:\codeql-home
