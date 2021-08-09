@@ -25,7 +25,7 @@ _(Note: The kit was updated, the latest one was published 3/22/2021 and installs
 Preparing the environment:
 1. Download Windows 11 EWDK ISO https://go.microsoft.com/fwlink/?linkid=2165855
 * mount it (for example as E:)
-* copy entire content to local directory (for example c:\ewdk11): `mkdir c:\ewdk2022 && xcopy /e e:\* c:\ewdk11`
+* copy entire content to local directory (for example c:\ewdk11): `mkdir c:\ewdk11 && xcopy /e e:\* c:\ewdk11`
 * unmount and delete Windows 11 EWDK ISO file
 * if the name of the local directory is different from the default (c:\ewdk11) `set EWDK11_DIR=<Copy_Of_EWDK 11>`
 
