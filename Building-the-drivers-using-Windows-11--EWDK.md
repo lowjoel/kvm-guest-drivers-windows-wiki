@@ -54,3 +54,7 @@ Replace RELEASE_BRANCH with the appropriate branch depending on the OS you are c
 Build procedure:
 * Run buildAll.bat (for complete build including SDV)
 * Run build_AllNoSdv.bat (to build everything excluding SDV)
+
+Build procedure customization:
+* Set VIRTIO_WIN_RUN_CODEQL=1 to enable CodeQL checks as a part of SDV running
+* Set VIRTIO_WIN_SDV_2022=1 to build DVL for system device drivers.
