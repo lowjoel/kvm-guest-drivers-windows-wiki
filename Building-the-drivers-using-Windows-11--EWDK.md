@@ -27,7 +27,7 @@ Preparing the environment:
 * mount it (for example as E:)
 * copy entire content to local directory (for example c:\ewdk11): `mkdir c:\ewdk11 && xcopy /e e:\* c:\ewdk11`
 * unmount and delete Windows 11 EWDK ISO file
-* if the name of the local directory is different from the default (c:\ewdk11) `set EWDK11_DIR=<Copy_Of_EWDK 11>`
+* `set EWDK11_DIR=<Copy_Of_EWDK 11>`
 
 2. [CodeQL Windows Setup](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/static-tools-and-codeql#codeql-windows-setup)
 * mkdir C:\codeql-home
