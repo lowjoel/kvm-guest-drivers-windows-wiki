@@ -10,7 +10,7 @@ Examples of most useful commands are:
 * netkvm-wmi.cmd rss: returns run-time RSS statistics of the adapters (and resets it)
 * netkvm-wmi.cmd qfo: returns status of NetKVM failover feature of the adapters
 
-For all the available commands run **netkvm-wmi.cmd** without parameters.
+For all the available commands run **[netkvm-wmi.cmd](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/NetKVM/DebugTools/WMI/netkvm-wmi.cmd)** without parameters.
 
 To add new commands for development/testing purposes see the implementation of existing WMI commands:
 * https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/NetKVM/Common/netkvm.mof
