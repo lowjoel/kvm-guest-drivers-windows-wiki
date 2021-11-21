@@ -1,4 +1,4 @@
-**netkvm-wmi.cmd** is a simple developer-oriented tool that allows access to NetKVM driver to query or control the behavior of the driver.
+**[netkvm-wmi.cmd](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/NetKVM/DebugTools/WMI/netkvm-wmi.cmd)** is a simple developer-oriented tool that allows access to NetKVM driver to query or control the behavior of the driver.
 
 It is based on WMI interface of the network driver: WMI commands are converted to custom OID that the OS sends to the NetKVM driver.
 
