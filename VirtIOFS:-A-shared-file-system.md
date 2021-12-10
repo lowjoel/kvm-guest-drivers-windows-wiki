@@ -14,7 +14,7 @@ VirtIOFS is at an early stage of development and should be considered as a "Tech
 
 ### Host
 
-Following XML should be added to your libvirt VM:
+Following XML should be added to your libvirt VM descrition:
 
 ```xml
 <domain>
