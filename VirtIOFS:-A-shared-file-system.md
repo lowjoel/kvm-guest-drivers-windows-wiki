@@ -4,7 +4,7 @@ VirtIOFS is a shared file system that lets virtual machines access a directory t
 
 ## VirtIOFS for Windows
 
-VirtIOFS for Windows is a user mode file system, implemented using [WinFsp](https://github.com/billziss-gh/winfsp), that lets virtual machines access a directory tree on the host. VirtIOFS for Windows consists of VirtIO-powered driver and user space service.
+VirtIOFS for Windows is a user mode file system, implemented using [WinFsp](https://github.com/billziss-gh/winfsp). VirtIOFS for Windows consists of VirtIO-powered driver and user space service.
 
 ## Status
 
