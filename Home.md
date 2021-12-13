@@ -31,5 +31,5 @@
 
 * [Matching build to source](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Matching-build-to-source)
 
-* [Driver signing and certification]
+* [Driver signing and certification](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-signing-and-certification)
 
