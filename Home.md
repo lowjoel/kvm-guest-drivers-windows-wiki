@@ -30,3 +30,6 @@
 * [Windows guest drivers debugging](http://www.slideshare.net/YanVugenfirer/windows-guestdebugging-kvmforum2012)
 
 * [Matching build to source](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Matching-build-to-source)
+
+* [Driver signing and certification]
+
