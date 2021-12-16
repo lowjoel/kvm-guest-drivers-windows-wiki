@@ -42,7 +42,14 @@ More information on libvirt VirtIOFS options is provided in [libvirt docs](https
 
 ### Guest
 
-Detailed setup of WinFSP, VirtIOFS driver and service is described [here](https://virtio-fs.gitlab.io/howto-windows.html).
+VirtIOFS service can parse settings from command-line and from registry. When command-line arguments are absent it gets `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String) from `HKLM\Software\VirtIO-FS`. 
+
+For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`
+![](https://user-images.githubusercontent.com/8286747/146226495-0d7614ca-8a7d-4465-9aa3-3dc9dc9cb6de.png)
+
+Please note that `-1` in arguments corresponds to `0xffffffff` in DWORD value. 
+
+More information on setup of WinFSP, VirtIOFS driver and service is [here](https://virtio-fs.gitlab.io/howto-windows.html).
 
 ## Testing
 
