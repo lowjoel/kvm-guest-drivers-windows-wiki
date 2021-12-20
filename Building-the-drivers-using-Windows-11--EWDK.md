@@ -7,12 +7,11 @@ Recommended environment for drivers build: Windows 11 EWDK
 The building of drivers for the following operating systems is not supported by the batch build procedure:
 * Windows XP / Server 2003
 * Windows Vista / Server 2008
-
-Building drivers for Windows 7 / Server 2008R2 is optional.
-Use VIRTIO_WIN_BUILD_LEGACY=Win7 to include them into the build.
+* Windows 7 / Server 2008R2 
 
 Note: latest tag that supports the building of drivers for legacy operating systems:
-https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
+* https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
+* https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/02.12.2021-last-buildable-point-Win7
 
 Components to install
 * WinFsp https://github.com/billziss-gh/winfsp/releases/download/v1.8/winfsp-1.8.20304.msi (Core + Developer + Kernel Developer)
@@ -56,5 +55,4 @@ Build procedure:
 * Run build_AllNoSdv.bat (to build everything excluding SDV)
 
 Build procedure customization:
-* Set VIRTIO_WIN_RUN_CODEQL=1 to enable CodeQL checks as a part of SDV running
 * Set VIRTIO_WIN_SDV_2022=1 to build DVL for system device drivers.
