@@ -38,7 +38,7 @@ Following XML should be added to your libvirt VM descrition:
 
 The `<memoryBacking>` is necessary. Element `<source dir="/home/user/viofs"/>` describes host directory to share.
 
-More information on libvirt VirtIOFS options is provided in [libvirt docs](https://libvirt.org/kbase/virtiofs.html).
+More information on libvirt VirtIO-FS options is provided in [libvirt docs](https://libvirt.org/kbase/virtiofs.html).
 
 ### Guest
 
