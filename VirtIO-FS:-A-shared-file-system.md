@@ -1,14 +1,14 @@
 ## Overview
 
-VirtIOFS is a shared file system that lets virtual machines access a directory tree on the host. More information on the underlying approach is available [here](https://virtio-fs.gitlab.io/).
+VirtIO-FS is a shared file system that lets virtual machines access a directory tree on the host. More information on the underlying approach is available [here](https://virtio-fs.gitlab.io/).
 
-## VirtIOFS for Windows
+## VirtIO-FS for Windows
 
-VirtIOFS for Windows is a user mode file system, implemented using [WinFsp](https://github.com/billziss-gh/winfsp). VirtIOFS for Windows consists of VirtIO-powered driver and user space service.
+VirtIO-FS for Windows is a user mode file system, implemented using [WinFsp](https://github.com/billziss-gh/winfsp). VirtIO-FS for Windows consists of VirtIO-powered driver and user space service.
 
 ## Status
 
-VirtIOFS is at an early stage of development and should be considered as a "Tech Preview" feature.
+VirtIO-FS is at an early stage of development and should be considered as a "Tech Preview" feature.
 
 ## Setup
 
@@ -26,7 +26,7 @@ Following XML should be added to your libvirt VM descrition:
   ...
   <devices>
     <filesystem type="mount" accessmode="passthrough">
-      <driver type="virtiofs"/>
+      <driver type="virtiofs" queue="1024"/>
       <source dir="/home/user/viofs"/>
       <target dir="mount_tag"/>
       <address type="pci" domain="0x0000" bus="0x06" slot="0x00" function="0x0"/>
@@ -42,7 +42,7 @@ More information on libvirt VirtIOFS options is provided in [libvirt docs](https
 
 ### Guest
 
-VirtIOFS service can parse settings from command-line and from registry. When command-line arguments are absent it gets `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String) from `HKLM\Software\VirtIO-FS`. 
+VirtIO-FS service can parse settings from command-line and from registry. When command-line arguments are absent it gets `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String) from `HKLM\Software\VirtIO-FS`. 
 
 For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`
 ![](https://user-images.githubusercontent.com/8286747/146226495-0d7614ca-8a7d-4465-9aa3-3dc9dc9cb6de.png)
