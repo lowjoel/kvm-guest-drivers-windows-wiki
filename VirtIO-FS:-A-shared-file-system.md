@@ -8,7 +8,7 @@ VirtIO-FS for Windows is a user mode file system, implemented using [WinFsp](htt
 
 ## Status
 
-VirtIO-FS is at an early stage of development and should be considered as a "Tech Preview" feature.
+VirtIO-FS is at an early stage of development and should be considered as a "Tech Preview" feature. To see what may not work, check [known problems](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/VirtIO-FS%3A-A-shared-file-system#known-problems).
 
 ## Setup
 
@@ -50,6 +50,8 @@ For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D
 Please note that `-1` in arguments corresponds to `0xffffffff` in DWORD value. 
 
 More information on setup of WinFSP, VirtIOFS driver and service is [here](https://virtio-fs.gitlab.io/howto-windows.html).
+
+## Known problems
 
 ## Testing
 
