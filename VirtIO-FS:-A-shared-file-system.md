@@ -53,6 +53,10 @@ More information on setup of WinFSP, VirtIOFS driver and service is [here](https
 
 ## Known problems
 
+* Large file can't be copied without `queue=1024` ([issue#527](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/527))
+* VirtIO-FS is case-sensitive ([issue#669](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/669))
+* Only one VirtIO-FS instance can be started in OS ((issue#590)[https://github.com/virtio-win/kvm-guest-drivers-windows/issues/590])
+
 ## Testing
 
 ### WinFsp Tests
