@@ -49,7 +49,7 @@ For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D
 
 Please note that `-1` in arguments corresponds to `0xffffffff` in DWORD value. 
 
-More information on setup of WinFSP, VirtIOFS driver and service is [here](https://virtio-fs.gitlab.io/howto-windows.html).
+More information on setup of WinFSP, VirtIO-FS driver and service is [here](https://virtio-fs.gitlab.io/howto-windows.html).
 
 ## Known problems
 
