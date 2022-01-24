@@ -13,7 +13,7 @@ Note: latest tag that supports the building of drivers for legacy operating syst
 * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
 * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/02.12.2021-last-buildable-point-Win7
 
-Components to install
+Components to install:
 * WinFsp https://github.com/billziss-gh/winfsp/releases/download/v1.8/winfsp-1.8.20304.msi (Core + Developer + Kernel Developer)
 * Cryptographic provider development kit (CPDK) Windows 10 https://www.microsoft.com/en-us/download/details.aspx?id=30688
 _(Note: The kit was updated, the latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...)_
