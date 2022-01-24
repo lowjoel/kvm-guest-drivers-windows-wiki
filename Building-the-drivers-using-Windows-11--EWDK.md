@@ -4,11 +4,11 @@
 2. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases) with "Core", "Developer" and "Kernel Developer" features enabled.
 3. Download and install CPDK 8.0 (https://www.microsoft.com/en-us/download/details.aspx?id=30688).
 4. Download and install .NET Framework version 4.8 (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer). Windows Server 2022 and Windows 11 don't need it.
-5. Run `E:\LaunchBuilEnv.cmd`.
-6. CD to `kvm-guest-drivers-windows` folder.
+5. Open command-line and run `E:\LaunchBuilEnv.cmd`.
+6. Change directory to `kvm-guest-drivers-windows`.
 7. Run `build_AllNoSdv.bat [Win8|Win8.1|Win10]` depending on your Windows version. Choose `Win10` for Windows Server 2022 and Windows 11.
 8. Run `Tools\signAll.bat` to sign drivers. Loading of test-signed drivers must be enabled on your system (https://docs.microsoft.com/en-us/windows-hardware/drivers/install/the-testsigning-boot-configuration-option).
-9. Find drivers/services in folders named `Install` inside driver folder.
+9. Find drivers/services in folders named `Install` inside driver folders.
 
 ## Long version (you are going to develop drivers)
 
