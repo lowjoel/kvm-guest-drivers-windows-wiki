@@ -1,4 +1,4 @@
-## Short version (you are going to install and use drivers)
+## Short version (for personal driver use)
 
 1. Download Windows 11 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=216585) and mount it (let's say to `E:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
 2. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases) with "Core", "Developer" and "Kernel Developer" features enabled.
@@ -10,7 +10,7 @@
 8. Run `Tools\signAll.bat` to sign drivers. Loading of test-signed drivers must be enabled on your system (https://docs.microsoft.com/en-us/windows-hardware/drivers/install/the-testsigning-boot-configuration-option).
 9. Find drivers/services in folders named `Install` inside driver folders.
 
-## Long version (you are going to develop drivers)
+## Long version (for driver development)
 
 Recommended environment for drivers build: Windows 11 EWDK
 
