@@ -1,7 +1,7 @@
 ## Short version (for personal driver use)
 
 1. Download Windows 11 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=216585) and mount it (let's say to `E:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
-2. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases) with "Core", "Developer" and "Kernel Developer" features enabled.
+2. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases/tag/v1.10) with "Core", "Developer" and "Kernel Developer" features enabled.
 3. Download and install CPDK 8.0 (https://www.microsoft.com/en-us/download/details.aspx?id=30688).
 4. Download and install .NET Framework version 4.8 (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer). Windows Server 2022 and Windows 11 don't need it.
 5. Open command-line and run `E:\LaunchBuilEnv.cmd`.
