@@ -33,3 +33,5 @@
 
 * [Driver signing and certification](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Driver-signing-and-certification)
 
+* [Builds and tags mapping](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Builds-and-tags-mapping)
+
