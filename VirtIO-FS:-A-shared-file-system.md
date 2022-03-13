@@ -8,7 +8,11 @@ VirtIO-FS is at an early stage of development and should be considered as a "Tec
 
 # Setup
 
-## Host (libvirt)
+## Host
+
+This section shows how to setup VirtIO-FS device on the host side. Two options are described: libvirt and QEMU.
+
+### libvirt
 
 Following XML should be added to your libvirt VM descrition:
 
@@ -35,6 +39,23 @@ Following XML should be added to your libvirt VM descrition:
 The `<memoryBacking>` is necessary. Element `<source dir="/home/user/viofs"/>` describes host directory to share.
 
 More information on libvirt VirtIO-FS options is provided in [libvirt docs](https://libvirt.org/kbase/virtiofs.html). 
+
+### QEMU
+
+Run virtiofsd daemon:
+
+```
+/usr/libexec/virtiofsd --socket-path=/tmp/virtiofs_socket -o source=/home/user/viofs
+```
+
+Adjust following QEMU command-line parameters:
+
+* Instantiate the character device for socket communication between QEMU and virtiofsd:
+`-chardev socket,id=char0,path=/tmp/virtiofs_socket`
+* Instantiate the VirtIO-FS PCI device:
+`-device vhost-user-fs-pci,queue-size=1024,chardev=char0,tag=my_virtiofs`
+* Force use of memory sharing with virtiofsd (replace `4G` with your desired VM RAM size):
+`-m 4G -object memory-backend-file,id=mem,size=4G,mem-path=/dev/shm,share=on -numa node,memdev=mem`
 
 ## Guest
 
