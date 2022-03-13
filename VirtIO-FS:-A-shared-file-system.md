@@ -38,6 +38,11 @@ More information on libvirt VirtIO-FS options is provided in [libvirt docs](http
 
 ## Guest
 
+### Setup with installer
+1. Download and install [WinFSP](https://github.com/billziss-gh/winfsp/releases) with at least "Core" feature enabled.
+2. Install VirtIO-FS driver and service from [VirtIO-Win package](https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md).
+
+### Manual setup (for development purposes)
 1. Download and install [WinFSP](https://github.com/billziss-gh/winfsp/releases) with at least "Core" feature enabled. If you plan to make changes to VirtIO-FS driver or service then enable "Core", "Developer" and "Kernel Developer" features in the installer.
 2. Install VirtIO-FS driver with Device Manager or `pnputil.exe`.
 3. Setup VirtIO-FS service by running `sc create VirtioFsSvc binPath="<path to the binary>\virtiofs.exe" start=auto depend=VirtioFsDrv`. Don't forget to appropriately set `binPath`.
