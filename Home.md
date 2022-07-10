@@ -1,5 +1,3 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://www.comebackalive.in.ua/)
-
 * Read about [VirtIO](https://github.com/rustyrussell/virtio-spec) interface, find the latest spec [here](http://docs.oasis-open.org/virtio/virtio/v1.0/virtio-v1.0.html)
 
 * [NetKvm - NDIS miniport network driver for Windows guests](http://www.linux-kvm.org/page/WindowsGuestDrivers/kvmnet)
@@ -10,7 +8,7 @@
 
 * [NetKVM - WMI tool](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/NetKVM-WMI-interface-(netkvm-wmi.cmd))
 
-* [VirtIO-FS - A shared file system](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/VirtIO-FS:-A-shared-file-system)
+* [VirtIO-FS - Shared file system](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/VirtIO-FS:-Shared-file-system)
 
 * [All drivers - WPP tracing](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/Documentation/Tracing.md
 )
