@@ -46,6 +46,8 @@ Windows 11 EWDK is the recommended environment for drivers build.
 * **At the moment of transition to EWDK, the drivers will be built using Windows 11 EWDK.**
 * **Currently usage of Windows 11 EWDK is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
 
+# Notes on the build batch
+
 The building of drivers for the following operating systems is not supported by the batch build procedure:
 * Windows XP / Server 2003
 * Windows Vista / Server 2008
@@ -55,10 +57,6 @@ Note: latest tag that supports the building of drivers for legacy operating syst
 * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
 * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/02.12.2021-last-buildable-point-Win7
 
-# Building all including SDV
-
 Run `buildAll.bat` for complete build including SDV. Note that a SDV build takes long time.
 
-# Build procedure customization
-
-* Set VIRTIO_WIN_SDV_2022=1 to build DVL for system device drivers.
+Set VIRTIO_WIN_SDV_2022=1 to build DVL for system device drivers.
