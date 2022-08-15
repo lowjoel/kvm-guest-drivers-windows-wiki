@@ -1,4 +1,4 @@
-## Short version (for personal driver use)
+# Steps required for building
 
 1. Download Windows 11 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=216585) and mount it (let's say to `E:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
 2. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases/tag/v1.10) with "Core", "Developer" and "Kernel Developer" features enabled.
@@ -10,34 +10,10 @@
 8. Run `Tools\signAll.bat` to sign drivers. Loading of test-signed drivers must be enabled on your system (https://docs.microsoft.com/en-us/windows-hardware/drivers/install/the-testsigning-boot-configuration-option).
 9. Find drivers/services in folders named `Install` inside driver folders.
 
-## Long version (for driver development)
+# Additional steps for driver development
 
-Recommended environment for drivers build: Windows 11 EWDK
+1. Copy EWDK to a local directory for convenience
 
-**Note:**
-* **At the moment of transition to EWDK, the drivers will be built using Windows 11 EWDK.**
-* **Currently usage of Windows 11 EWDK is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
-
-The building of drivers for the following operating systems is not supported by the batch build procedure:
-* Windows XP / Server 2003
-* Windows Vista / Server 2008
-* Windows 7 / Server 2008R2 
-
-Note: latest tag that supports the building of drivers for legacy operating systems:
-* https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
-* https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/02.12.2021-last-buildable-point-Win7
-
-Components to install:
-* WinFsp https://github.com/billziss-gh/winfsp/releases/download/v1.8/winfsp-1.8.20304.msi (Core + Developer + Kernel Developer)
-* Cryptographic provider development kit (CPDK) Windows 10 https://www.microsoft.com/en-us/download/details.aspx?id=30688
-_(Note: The kit was updated, the latest one was published 3/22/2021 and installs headers and binaries under ...\Windows Kits\10.0\...)_
-* .NET Framework version 4.8 https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer
-* Visual Studio 2013 Redistributable x86 (required by EWDK/SDV) [KB 3138367](http://download.microsoft.com/download/c/c/2/cc2df5f8-4454-44b4-802d-5ea68d086676/vcredist_x86.exe)
-* CodeQL tool for the Static Tools Logo Test
-
-Preparing the environment:
-1. Download Windows 11 EWDK ISO https://go.microsoft.com/fwlink/?linkid=2165855
-* mount it (for example as E:)
 * copy entire content to local directory (for example c:\ewdk11): `mkdir c:\ewdk11 && xcopy /e e:\* c:\ewdk11`
 * unmount and delete Windows 11 EWDK ISO file
 * `set EWDK11_DIR=<Copy_Of_EWDK 11>`
@@ -63,10 +39,26 @@ Replace RELEASE_BRANCH with the appropriate branch depending on the OS you are c
 | Windows Server 2022             | WHCP_21H2       |
 | Windows 11                      | WHCP_21H2       |
 
+# Notes on Windows 11 EWDK
 
-Build procedure:
-* Run buildAll.bat (for complete build including SDV)
-* Run build_AllNoSdv.bat (to build everything excluding SDV)
+Windows 11 EWDK is the recommended environment for drivers build.
 
-Build procedure customization:
+* **At the moment of transition to EWDK, the drivers will be built using Windows 11 EWDK.**
+* **Currently usage of Windows 11 EWDK is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
+
+The building of drivers for the following operating systems is not supported by the batch build procedure:
+* Windows XP / Server 2003
+* Windows Vista / Server 2008
+* Windows 7 / Server 2008R2 
+
+Note: latest tag that supports the building of drivers for legacy operating systems:
+* https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
+* https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/02.12.2021-last-buildable-point-Win7
+
+# Building all including SDV
+
+Run `buildAll.bat` for complete build including SDV. Note that a SDV build takes long time.
+
+# Build procedure customization
+
 * Set VIRTIO_WIN_SDV_2022=1 to build DVL for system device drivers.
