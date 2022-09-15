@@ -115,7 +115,7 @@ Mount VirtIO-FS with tag `mount_tag1` to `Z:\`:
 "C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsZ mount_tag1 Z:
 ```
 Here `viofsY` and `viofsZ` are instance names for WinFsp.Launcher. They are selected arbitrary, but must differ between instances.
-
+![image](https://user-images.githubusercontent.com/8286747/190429409-b4c42336-4292-4d91-8cb0-292736b17307.png)
 #### Unmount
 
 Unmount is done by the instance name:
