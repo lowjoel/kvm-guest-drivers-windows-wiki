@@ -89,21 +89,44 @@ Since command-line arguments can't be assigned to Windows service permanently, V
 
 ### Multiple VirtIO-FS instances
 
+#### Setup
+
 Support for multiple VirtIO-FS instances is made by WinFSP.Launcher service, so VirtIO-FS own service should not be running:
 ```
 sc stop VirtioFsSvc
 sc config VirtioFsSvc start=demand
 ```
+The VirtIO-FS service is now stopped and will not start even after reboot.
 
-VirtIO-FS configuration for WinFSP.Launcher:
+VirtIO-FS configuration for WinFsp.Launcher:
 ```
-"C:\Program Files (x86)\WinFsp\bin\fsreg.bat"
+"C:\Program Files (x86)\WinFsp\bin\fsreg.bat" virtiofs "<path to the binary>\virtiogfs.exe" "-t %1 -m %2"
+```
+Corresponding data is now available to view and edit under `HKLM\SOFTWARE\WOW6432Node\WinFsp\Services\virtiofs` registry key.
+
+#### Mount
+
+Mount VirtIO-FS with tag `mount_tag0` to `Y:\`:
+```
+"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsY mount_tag0 Y:"
+```
+Mount VirtIO-FS with tag `mount_tag1` to `Z:\`:
+```
+"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsZ mount_tag1 Z:"
+```
+Here `viofsY` and `viofsZ` are instance names for WinFsp.Launcher. They are selected arbitrary, but must differ between instances.
+
+#### Unmount
+
+Unmount is done by the instance name:
+```
+"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" stop virtiofs viofsY
+"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" stop virtiofs viofsZ
 ```
 
-# Known problems
+# Known limitations
 
 * VirtIO-FS is case-sensitive ([issue#669](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/669))
-* Only one VirtIO-FS instance can be started in OS ([issue#590](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/590))
 
 # Testing
 
