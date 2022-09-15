@@ -87,6 +87,19 @@ VirtIO-FS service can parse following settings from command-line:
 Since command-line arguments can't be assigned to Windows service permanently, VirtIO-FS can parse them from the registry. When command-line arguments are absent the service looks up for `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String) under `HKLM\Software\VirtIO-FS`. For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`. Please note that `-1` corresponds to `0xffffffff` in DWORD value. 
 ![](https://user-images.githubusercontent.com/8286747/146226495-0d7614ca-8a7d-4465-9aa3-3dc9dc9cb6de.png)
 
+### Multiple VirtIO-FS instances
+
+Support for multiple VirtIO-FS instances is made by WinFSP.Launcher service, so VirtIO-FS own service should not be running:
+```
+sc stop VirtioFsSvc
+sc config VirtioFsSvc start=demand
+```
+
+VirtIO-FS configuration for WinFSP.Launcher:
+```
+"C:\Program Files (x86)\WinFsp\bin\fsreg.bat"
+```
+
 # Known problems
 
 * VirtIO-FS is case-sensitive ([issue#669](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/669))
