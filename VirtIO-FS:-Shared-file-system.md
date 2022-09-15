@@ -108,11 +108,11 @@ Corresponding data is now available to view and edit under `HKLM\SOFTWARE\WOW643
 
 Mount VirtIO-FS with tag `mount_tag0` to `Y:\`:
 ```
-"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsY mount_tag0 Y:"
+"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsY mount_tag0 Y:
 ```
 Mount VirtIO-FS with tag `mount_tag1` to `Z:\`:
 ```
-"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsZ mount_tag1 Z:"
+"C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsZ mount_tag1 Z:
 ```
 Here `viofsY` and `viofsZ` are instance names for WinFsp.Launcher. They are selected arbitrary, but must differ between instances.
 
