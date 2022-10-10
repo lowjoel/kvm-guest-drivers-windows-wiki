@@ -100,7 +100,7 @@ The VirtIO-FS service is now stopped and will not start even after reboot.
 
 VirtIO-FS configuration for WinFsp.Launcher:
 ```
-"C:\Program Files (x86)\WinFsp\bin\fsreg.bat" virtiofs "<path to the binary>\virtiogfs.exe" "-t %1 -m %2"
+"C:\Program Files (x86)\WinFsp\bin\fsreg.bat" virtiofs "<path to the binary>\virtiofs.exe" "-t %1 -m %2"
 ```
 Corresponding data is now available to view and edit under `HKLM\SOFTWARE\WOW6432Node\WinFsp\Services\virtiofs` registry key.
 
