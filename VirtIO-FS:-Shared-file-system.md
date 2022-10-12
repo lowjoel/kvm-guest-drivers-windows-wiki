@@ -80,11 +80,13 @@ Adjust following QEMU command-line parameters:
 VirtIO-FS service can parse following settings from command-line:
 ```
   -d DebugFlags       [-1: enable all debug logs]
-  -D DebugLogFile     [file path]
+  -D DebugLogFile     [file path; use - for stderr]
+  -i                  [case insensitive file system]
   -m MountPoint       [X:|* (required if no UNC prefix)]
+  -t Tag              [mount tag; max 36 symbols]
 ```
 
-Since command-line arguments can't be assigned to Windows service permanently, VirtIO-FS can parse them from the registry. When command-line arguments are absent the service looks up for `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String) under `HKLM\Software\VirtIO-FS`. For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`. Please note that `-1` corresponds to `0xffffffff` in DWORD value. 
+Since command-line arguments can't be assigned to Windows service permanently, VirtIO-FS can parse them from the registry. When command-line arguments are absent the service looks up for `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String), `CaseInsensitive` (DWORD) under `HKLM\Software\VirtIO-FS`. For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`. Please note that `-1` corresponds to `0xffffffff` in DWORD value. 
 ![](https://user-images.githubusercontent.com/8286747/146226495-0d7614ca-8a7d-4465-9aa3-3dc9dc9cb6de.png)
 
 ### Multiple VirtIO-FS instances
