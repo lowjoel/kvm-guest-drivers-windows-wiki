@@ -1,6 +1,6 @@
 # Steps required for building
 
-1. Download Windows 11 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=216585) and mount it (let's say to `E:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
+1. Download Windows 11 21H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2202360) and mount it (let's say to `E:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
 2. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases/tag/v1.10) with "Core", "Developer" and "Kernel Developer" features enabled.
 3. Download and install CPDK 8.0 (https://www.microsoft.com/en-us/download/details.aspx?id=30688).
 4. Download and install .NET Framework version 4.8 (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer). Windows Server 2022 and Windows 11 don't need it.
@@ -15,7 +15,7 @@
 1. Copy EWDK to a local directory for convenience
 
 * copy entire content to local directory (for example c:\ewdk11): `mkdir c:\ewdk11 && xcopy /e e:\* c:\ewdk11`
-* unmount and delete Windows 11 EWDK ISO file
+* unmount and delete Windows 11 21H2 EWDK ISO file
 * `set EWDK11_DIR=<Copy_Of_EWDK 11>`
 
 2. [CodeQL Windows Setup](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/static-tools-and-codeql#codeql-windows-setup)
@@ -39,9 +39,9 @@ Replace RELEASE_BRANCH with the appropriate branch depending on the OS you are c
 | Windows Server 2022             | WHCP_21H2       |
 | Windows 11                      | WHCP_21H2       |
 
-# Notes on Windows 11 EWDK
+# Notes on Windows 11 21H2 EWDK
 
-Windows 11 EWDK is the recommended environment for drivers build.
+Windows 11 21H2 EWDK is the recommended environment for drivers build.
 
 * **At the moment of transition to EWDK, the drivers will be built using Windows 11 EWDK.**
 * **Currently usage of Windows 11 EWDK is blocked by the following issues: the need to separate SDV build (all the drivers should have SDV logs), CodeQL analysis errors, and ARM64 build error.**
