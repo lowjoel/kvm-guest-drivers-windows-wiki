@@ -93,7 +93,7 @@ Since command-line arguments can't be assigned to Windows service permanently, V
 
 #### Setup
 
-Support for multiple VirtIO-FS instances is made by WinFSP.Launcher service, so VirtIO-FS own service should not be running:
+**Support for multiple VirtIO-FS instances is made by WinFSP.Launcher service, so VirtIO-FS own service should not be running:**
 ```
 sc stop VirtioFsSvc
 sc config VirtioFsSvc start=demand
