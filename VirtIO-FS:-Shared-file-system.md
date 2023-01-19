@@ -4,7 +4,7 @@ VirtIO-FS is a shared file system that lets virtual machines access a directory 
 
 # Status
 
-VirtIO-FS is at an early stage of development and should be considered as a "Tech Preview" feature. To see what may not work, please check [known problems](#known-problems).
+VirtIO-FS is at an early stage of development and should be considered as a "Tech Preview" feature. To see what may not work, please check [known limitations](#known-limitations).
 
 # Setup
 
