@@ -84,9 +84,17 @@ VirtIO-FS service can parse following settings from command-line:
   -i                  [case insensitive file system]
   -m MountPoint       [X:|* (required if no UNC prefix)]
   -t Tag              [mount tag; max 36 symbols]
+  -o UID:GID          [host owner UID:GID]
 ```
 
-Since command-line arguments can't be assigned to Windows service permanently, VirtIO-FS can parse them from the registry. When command-line arguments are absent the service looks up for `DebugFlags` (DWORD), `DebugLogFile` (String), `MountPoint` (String), `CaseInsensitive` (DWORD) under `HKLM\Software\VirtIO-FS`. For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`. Please note that `-1` corresponds to `0xffffffff` in DWORD value. 
+Since command-line arguments can't be assigned to Windows service permanently, VirtIO-FS can parse them from the registry. When command-line arguments are absent the service looks up for the following parameters under `HKLM\Software\VirtIO-FS`:
+* `DebugFlags` (DWORD)
+* `DebugLogFile` (String)
+* `MountPoint` (String)
+* `CaseInsensitive` (DWORD)
+* `Owner` (String)
+
+For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D C:\viofs_debug.log -m X:`. Please note that `-1` corresponds to `0xffffffff` in DWORD value. 
 ![](https://user-images.githubusercontent.com/8286747/146226495-0d7614ca-8a7d-4465-9aa3-3dc9dc9cb6de.png)
 
 Also, parameters named `OverflowUid` and `OverflowGid` are always parsed from the registry. Normally, these parameters only affect if the host daemon is running inside a Linux user namespace. They denote [UID and GID perceived as `nobody` on the host](https://www.kernel.org/doc/Documentation/sysctl/fs.txt), so they should be in sync with corresponding host values. If the service finds out shared folder root owner UID/GID becomes `nobody`, it will try previous UID/GID as owner for new files and folders. They assumed to be `65534` if no such parameters are found in the registry.
