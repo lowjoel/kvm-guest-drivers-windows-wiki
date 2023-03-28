@@ -1,4 +1,4 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://www.comebackalive.in.ua/)
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://savelife.in.ua/en/)
 
 * Read about [VirtIO](https://github.com/rustyrussell/virtio-spec) interface, find the latest spec [here](http://docs.oasis-open.org/virtio/virtio/v1.0/virtio-v1.0.html)
 
