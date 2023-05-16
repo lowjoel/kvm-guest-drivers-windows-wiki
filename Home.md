@@ -10,7 +10,7 @@
 
 * [NetKVM - WMI tool](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/NetKVM-WMI-interface-(netkvm-wmi.cmd))
 
-* [VirtIO-FS - Shared file system](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/VirtIO-FS:-Shared-file-system)
+* [Virtiofs - Shared file system](https://github.com/virtio-win/kvm-guest-drivers-windows/wiki/Virtiofs:-Shared-file-system)
 
 * [All drivers - WPP tracing](https://github.com/virtio-win/kvm-guest-drivers-windows/blob/master/Documentation/Tracing.md
 )
