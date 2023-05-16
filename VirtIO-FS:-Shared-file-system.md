@@ -1,16 +1,16 @@
 # Overview
 
-VirtIO-FS is a shared file system that lets virtual machines access a directory tree on the host. More information on the underlying approach is available at [virtio-fs.gitlab.io](https://virtio-fs.gitlab.io/). VirtIO-FS for Windows is a user mode file system, implemented using [WinFsp framework](https://github.com/billziss-gh/winfsp). VirtIO-FS consists of VirtIO-powered driver and user-space service based on WinFsp.
+Virtiofs is a shared file system that lets virtual machines access a directory tree on the host. More information on the underlying approach is available at [virtio-fs.gitlab.io](https://virtio-fs.gitlab.io/). Virtiofs for Windows is a user mode file system, implemented using [WinFsp framework](https://github.com/billziss-gh/winfsp). Virtiofs consists of VirtIO-powered driver and user-space service based on WinFsp.
 
 # Status
 
-VirtIO-FS is at an early stage of development and should be considered as a "Tech Preview" feature. To see what may not work, please check [known limitations](#known-limitations).
+Virtiofs is at an early stage of development and should be considered as a "Tech Preview" feature. To see what may not work, please check [known limitations](#known-limitations).
 
 # Setup
 
 ## Host
 
-This section shows how to setup VirtIO-FS device on the host side. Two options are described: libvirt and QEMU.
+This section shows how to setup virtiofs device on the host side. Two options are described: libvirt and QEMU.
 
 ### libvirt
 
@@ -38,7 +38,7 @@ Following XML should be added to your libvirt VM descrition:
 
 The `<memoryBacking>` is necessary. Element `<source dir="/home/user/viofs"/>` describes host directory to share.
 
-More information on libvirt VirtIO-FS options is provided in [libvirt docs](https://libvirt.org/kbase/virtiofs.html). 
+More information on libvirt virtiofs options is provided in [libvirt docs](https://libvirt.org/kbase/virtiofs.html).
 
 ### QEMU
 
@@ -52,7 +52,7 @@ Adjust following QEMU command-line parameters:
 
 * Instantiate the character device for socket communication between QEMU and virtiofsd:
 `-chardev socket,id=char0,path=/tmp/virtiofs_socket`
-* Instantiate the VirtIO-FS PCI device:
+* Instantiate the virtiofs PCI device:
 `-device vhost-user-fs-pci,queue-size=1024,chardev=char0,tag=my_virtiofs`
 * Force use of memory sharing with virtiofsd (replace `4G` with your desired VM RAM size):
 `-m 4G -object memory-backend-file,id=mem,size=4G,mem-path=/dev/shm,share=on -numa node,memdev=mem`
@@ -61,13 +61,13 @@ Adjust following QEMU command-line parameters:
 
 ### Setup with installer
 1. Download and install [WinFSP](https://github.com/billziss-gh/winfsp/releases) with at least "Core" feature enabled.
-2. Install VirtIO-FS driver and service from [VirtIO-Win package](https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md).
+2. Install virtiofs driver and service from [VirtIO-Win package](https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md).
 
 ### Manual setup (for development purposes)
-1. Download and install [WinFSP](https://github.com/billziss-gh/winfsp/releases) with at least "Core" feature enabled. If you plan to make changes to VirtIO-FS driver or service then enable "Core", "Developer" and "Kernel Developer" features in the installer.
-2. Install VirtIO-FS driver with Device Manager or `pnputil.exe`.
-3. Setup VirtIO-FS service by running `sc create VirtioFsSvc binPath="<path to the binary>\virtiofs.exe" start=auto depend=VirtioFsDrv`. Don't forget to appropriately set `binPath`.
-4. You can immediately start the service by running `sc start VirtioFsSvc`. The service will start automatically on boot. VirtIO-FS uses the first available drive letter starting with `Z:` unless no mount-point is specified.
+1. Download and install [WinFSP](https://github.com/billziss-gh/winfsp/releases) with at least "Core" feature enabled. If you plan to make changes to virtiofs driver or service then enable "Core", "Developer" and "Kernel Developer" features in the installer.
+2. Install virtiofs driver with Device Manager or `pnputil.exe`.
+3. Setup virtiofs service by running `sc create VirtioFsSvc binPath="<path to the binary>\virtiofs.exe" start=auto depend=VirtioFsDrv`. Don't forget to appropriately set `binPath`.
+4. You can immediately start the service by running `sc start VirtioFsSvc`. The service will start automatically on boot. Virtiofs uses the first available drive letter starting with `Z:` unless no mount-point is specified.
 
 ![](https://user-images.githubusercontent.com/8286747/151011858-c9d122d2-d95a-421c-9914-c7d4dd05e2e3.png)
 
@@ -77,7 +77,7 @@ Adjust following QEMU command-line parameters:
 
 ### Options
 
-VirtIO-FS service can parse following settings from command-line:
+Virtiofs service can parse following settings from command-line:
 ```
   -d DebugFlags       [-1: enable all debug logs]
   -D DebugLogFile     [file path; use - for stderr]
@@ -87,7 +87,7 @@ VirtIO-FS service can parse following settings from command-line:
   -o UID:GID          [host owner UID:GID]
 ```
 
-Since command-line arguments can't be assigned to Windows service permanently, VirtIO-FS can parse them from the registry. When command-line arguments are absent the service looks up for the following parameters under `HKLM\Software\VirtIO-FS`:
+Since command-line arguments can't be assigned to Windows service permanently, virtiofs can parse them from the registry. When command-line arguments are absent the service looks up for the following parameters under `HKLM\Software\virtiofs`:
 * `DebugFlags` (DWORD)
 * `DebugLogFile` (String)
 * `MountPoint` (String)
@@ -99,18 +99,18 @@ For example, registry values depicted below correspond to `virtiofs.exe -d -1 -D
 
 Also, parameters named `OverflowUid` and `OverflowGid` are always parsed from the registry. Normally, these parameters only affect if the host daemon is running inside a Linux user namespace. They denote [UID and GID perceived as `nobody` on the host](https://www.kernel.org/doc/Documentation/sysctl/fs.txt), so they should be in sync with corresponding host values. If the service finds out shared folder root owner UID/GID becomes `nobody`, it will try previous UID/GID as owner for new files and folders. They assumed to be `65534` if no such parameters are found in the registry.
 
-### Multiple VirtIO-FS instances
+### Multiple virtiofs instances
 
 #### Setup
 
-Support for multiple VirtIO-FS instances is made by WinFSP.Launcher service, so VirtIO-FS own service should not be running:
+Support for multiple virtiofs instances is made by WinFSP.Launcher service, so virtiofs own service should not be running:
 ```
 sc stop VirtioFsSvc
 sc config VirtioFsSvc start=demand
 ```
-The VirtIO-FS service is now stopped and will not start even after reboot.
+The virtiofs service is now stopped and will not start even after reboot.
 
-VirtIO-FS configuration for WinFsp.Launcher:
+Virtiofs configuration for WinFsp.Launcher:
 ```
 "C:\Program Files (x86)\WinFsp\bin\fsreg.bat" virtiofs "<path to the binary>\virtiofs.exe" "-t %1 -m %2"
 ```
@@ -118,11 +118,11 @@ Corresponding data is now available to view and edit under `HKLM\SOFTWARE\WOW643
 
 #### Mount
 
-Mount VirtIO-FS with tag `mount_tag0` to `Y:\`:
+Mount virtiofs with tag `mount_tag0` to `Y:\`:
 ```
 "C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsY mount_tag0 Y:
 ```
-Mount VirtIO-FS with tag `mount_tag1` to `Z:\`:
+Mount virtiofs with tag `mount_tag1` to `Z:\`:
 ```
 "C:\Program Files (x86)\WinFsp\bin\launchctl-x64.exe" start virtiofs viofsZ mount_tag1 Z:
 ```
@@ -138,7 +138,7 @@ Unmount is done by the instance name:
 
 # Known limitations
 
-* VirtIO-FS is case-sensitive ([issue#669](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/669))
+* Virtiofs is case-sensitive ([issue#669](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/669))
 
 # Testing
 
@@ -150,7 +150,7 @@ The following command line is used to execute WinFsp's test suite:
 winfsp-tests-x64.exe --external --resilient -create_fileattr_test -create_readonlydir_test -create_allocation_test -create_notraverse_test -getfileattr_test -getfileinfo_test -getfileinfo_name_test -setfileinfo_test -setsecurity_test -reparse_guid_test -reparse_nfs_test -stream_*
 ```
 
-VirtIO-FS for Windows does not currently pass all available tests so some of them are skipped for now:
+Virtiofs for Windows does not currently pass all available tests so some of them are skipped for now:
 
 | Test Name | Failure Description |
 |---|---|
