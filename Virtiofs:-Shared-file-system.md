@@ -57,6 +57,16 @@ Adjust following QEMU command-line parameters:
 * Force use of memory sharing with virtiofsd (replace `4G` with your desired VM RAM size):
 `-m 4G -object memory-backend-file,id=mem,size=4G,mem-path=/dev/shm,share=on -numa node,memdev=mem`
 
+### virtiofsd
+
+Modern virtiofsd is written in Rust and supported here: https://gitlab.com/virtio-fs/virtiofsd
+
+To build virtiofsd:
+```
+cargo build
+```
+
+
 ## Guest
 
 ### Setup with installer
