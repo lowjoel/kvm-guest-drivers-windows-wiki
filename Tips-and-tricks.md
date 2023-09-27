@@ -11,6 +11,6 @@ Examples:
 On the Windows guest side, you will need to write some app that redirects the console to the virtio-serial port. 
 Examples of the port usage can be found in qemu-ga (guest agent): https://github.com/qemu/qemu/blob/master/qga/channel-win32.c#L283
 
-On the Linux guest side, console ports will be available as `/dev/hvc*` or `/dev/vpor* devices depending on the command line.
+On the Linux guest side, console ports will be available as `/dev/hvc*` or `/dev/vpor*` devices depending on the command line.
 
 Regarding config from host to guest. It can be using the same or another virtio-serial port as well.
