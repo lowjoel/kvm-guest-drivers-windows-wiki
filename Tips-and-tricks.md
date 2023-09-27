@@ -1,5 +1,3 @@
-# Tips and tricks
-
 ## Guest (Linux/Windows) <--> Host (Linux) stdout redirection
 
 Let's start with the console app. There is an existing mechanism of `virtio-serial` ports 
