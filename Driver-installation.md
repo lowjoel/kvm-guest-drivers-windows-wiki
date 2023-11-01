@@ -3,7 +3,43 @@
 
 Remember to be cautious when installing or updating drivers, as improper installation or incompatible drivers can cause system instability. Make sure you have the correct driver for your hardware, and back up your data before making any significant changes to your system.
 
-## Variant 1: using the `pnputil` command line utility
+## Variant 1: using the Installation Wizard
+
+This is the best option for regular users that just want to install the drivers on their VM
+
+1. **Download Virtio-Win ISO:**
+   - Visit the official Virtio-Win repository (https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso) and download the latest Virtio-Win ISO file to your host machine.
+
+2. **Attach the Virtio-Win ISO to the VM:**
+   - Ensure your VM is powered on and running.
+   - In the VM management software (e.g., VirtualBox, VMware, QEMU, etc.), locate the option to attach the Virtio-Win ISO as a virtual CD/DVD drive to the VM. The specific steps may vary depending on the virtualization software you're using.
+
+3. **Inside the VM:**
+   - Access the VM's desktop or file system.
+
+4. **Open File Explorer:**
+   - Open File Explorer (Windows Explorer) within the VM.
+
+5. **Navigate to the Virtio-Win ISO:**
+   - In File Explorer, locate and click on the virtual CD/DVD drive where the Virtio-Win ISO is mounted. It should be listed under "This PC" or "Computer."
+
+6. **Launch the Installation Wizard:**
+   - Inside the Virtio-Win ISO, look for the `virtio-win-guest-tools` folder.
+   - Within that folder, locate the `virtio-win-guest-tools-xxx.exe` (where "xxx" represents the version number) file and run it by double-clicking it. This file contains the Virtio-Win drivers and the Installation Wizard.
+
+7. **Select Components:**
+   - The Virtio-Win Installation Wizard will launch. It will prompt you to select the components you want to install, such as network drivers, storage drivers, and balloon drivers. You can choose to install all available drivers by default or select specific components based on your requirements. Click "Install" to proceed.
+
+8. **Driver Installation:**
+   - The Installation Wizard will begin to install the selected drivers. You will see progress bars for each driver component being installed.
+
+9. **Reboot the VM (if prompted):**
+   - After the drivers are installed, the Installation Wizard may prompt you to reboot the VM for the changes to take effect. If prompted, save your work and restart the VM.
+
+10. **Verify Driver Installation:**
+    - After the VM restarts, check Device Manager to ensure that the Virtio-Win drivers are correctly installed. There should be no unknown devices or driver-related errors.
+
+## Variant 4: using the `pnputil` command line utility
 
 1. Open a Command Prompt with administrative privileges:
    - Press the Windows key.
@@ -107,37 +143,3 @@ Remember to be cautious when installing or updating drivers, as improper install
 
 9. **Verify Installation:**
    - After installation, check Device Manager to ensure the driver is listed under the appropriate category without any warnings or errors. If the device is listed correctly, the driver installation was successful.
-
-## Variant 4: using the Installation Wizard
-
-1. **Download Virtio-Win ISO:**
-   - Visit the official Virtio-Win repository (https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso) and download the latest Virtio-Win ISO file to your host machine.
-
-2. **Attach the Virtio-Win ISO to the VM:**
-   - Ensure your VM is powered on and running.
-   - In the VM management software (e.g., VirtualBox, VMware, QEMU, etc.), locate the option to attach the Virtio-Win ISO as a virtual CD/DVD drive to the VM. The specific steps may vary depending on the virtualization software you're using.
-
-3. **Inside the VM:**
-   - Access the VM's desktop or file system.
-
-4. **Open File Explorer:**
-   - Open File Explorer (Windows Explorer) within the VM.
-
-5. **Navigate to the Virtio-Win ISO:**
-   - In File Explorer, locate and click on the virtual CD/DVD drive where the Virtio-Win ISO is mounted. It should be listed under "This PC" or "Computer."
-
-6. **Launch the Installation Wizard:**
-   - Inside the Virtio-Win ISO, look for the `virtio-win-guest-tools` folder.
-   - Within that folder, locate the `virtio-win-guest-tools-xxx.exe` (where "xxx" represents the version number) file and run it by double-clicking it. This file contains the Virtio-Win drivers and the Installation Wizard.
-
-7. **Select Components:**
-   - The Virtio-Win Installation Wizard will launch. It will prompt you to select the components you want to install, such as network drivers, storage drivers, and balloon drivers. You can choose to install all available drivers by default or select specific components based on your requirements. Click "Install" to proceed.
-
-8. **Driver Installation:**
-   - The Installation Wizard will begin to install the selected drivers. You will see progress bars for each driver component being installed.
-
-9. **Reboot the VM (if prompted):**
-   - After the drivers are installed, the Installation Wizard may prompt you to reboot the VM for the changes to take effect. If prompted, save your work and restart the VM.
-
-10. **Verify Driver Installation:**
-    - After the VM restarts, check Device Manager to ensure that the Virtio-Win drivers are correctly installed. There should be no unknown devices or driver-related errors.
