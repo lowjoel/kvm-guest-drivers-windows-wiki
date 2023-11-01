@@ -39,6 +39,49 @@ This is the best option for regular users that just want to install the drivers 
 10. **Verify Driver Installation:**
     - After the VM restarts, check Device Manager to ensure that the Virtio-Win drivers are correctly installed. There should be no unknown devices or driver-related errors.
 
+## Installing drivers required for Windows installation, such as hard disk drivers
+
+1. **Prepare Driver Files:**
+   - Before you begin the Windows installation, you'll need to have the necessary driver files for your hardware component ready. This usually includes the hard disk or storage controller drivers. Download these drivers from the manufacturer's website and save them to a USB flash drive.
+
+2. **Insert Windows Installation Media:**
+   - Insert the Windows installation media (DVD or USB) into your computer and boot from it. You may need to access the BIOS/UEFI settings to set the boot order to prioritize the installation media.
+
+3. **Start the Windows Installation:**
+   - Power on or restart your computer to initiate the Windows installation from the installation media. If it doesn't start automatically, you may need to press a key (e.g., F2, F12, Delete) to access the boot menu and select the installation media.
+
+4. **Language and Region Settings:**
+   - In the initial Windows setup screen, select your preferred language, time format, keyboard layout, and click "Next."
+
+5. **Click "Install Now":**
+   - On the next screen, click "Install Now" to start the Windows installation.
+
+6. **Accept License Terms:**
+   - Read and accept the Microsoft Software License Terms.
+
+7. **Choose Installation Type:**
+   - Select "Custom: Install Windows only (advanced)" as you will be specifying driver installation manually.
+
+8. **Partitioning and Drive Selection:**
+   - In the "Where do you want to install Windows?" window, you may not see your hard disk or storage device listed if it's not recognized. Click "Load Driver."
+
+9. **Load Drivers:**
+   - The "Load Driver" window will open. Insert the USB flash drive containing the driver files you prepared earlier.
+
+10. **Browse for Drivers:**
+    - Click "Browse" and navigate to the USB flash drive to find the driver files you downloaded. Select the appropriate driver and click "Next."
+
+11. **Install the Driver:**
+    - Windows will load the driver. Once the driver is loaded successfully, you should see your hard disk or storage device listed in the installation window.
+
+12. **Select the Drive:**
+    - Choose your hard disk or storage device and click "Next."
+
+13. **Complete Windows Setup:**
+    - Continue with the Windows setup, which includes creating or signing in with a Microsoft account, setting up your preferences, and configuring your system settings.
+
+By following these steps, you can successfully install the required drivers, such as hard disk drivers, during the Windows installation process. This ensures that your storage devices are recognized, allowing you to proceed with the installation and use your computer as intended.
+
 ## Variant 2: using Device Manager
 
 1. **Plug in the Device:** First, make sure the device for which you want to install the driver is connected to your computer. It should be recognized as an unknown device or have an error indicator in Device Manager.
