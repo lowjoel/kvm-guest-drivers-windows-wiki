@@ -39,45 +39,6 @@ This is the best option for regular users that just want to install the drivers 
 10. **Verify Driver Installation:**
     - After the VM restarts, check Device Manager to ensure that the Virtio-Win drivers are correctly installed. There should be no unknown devices or driver-related errors.
 
-## Variant 4: using the `pnputil` command line utility
-
-1. Open a Command Prompt with administrative privileges:
-   - Press the Windows key.
-   - Type "cmd" or "Command Prompt" into the search bar.
-   - Right-click on "Command Prompt" and select "Run as administrator."
-
-1. Type the following command to list all the installed drivers and their package names:
-   ```bash
-   pnputil /enum-drivers
-   ```
-   
-   This will provide a list of installed drivers along with their published names, which you will need to identify the correct driver package.
-
-1. Locate the INF file for the driver you want to install. INF files are typically located in the driver package folder or on the manufacturer's website.
-
-1. Install the driver using the `pnputil` utility. Replace `path\to\driver.inf` with the actual path to the INF file of the driver you want to install:
-   ```bash
-   pnputil /add-driver "path\to\driver.inf"
-   ```
-   
-   If you want to specify a package name (use the published name from step 2), you can do so with the `/package` option:
-   ```bash
-   pnputil /add-driver "path\to\driver.inf" /package PackageName
-   ```
-   
-   If the driver package contains multiple INF files, you should specify the INF file that corresponds to the specific hardware component you want to update.
-
-1. Windows may prompt you to confirm the installation of the driver. Confirm and proceed with the installation if prompted.
-
-1. After a successful installation, you should see a message indicating that the driver has been added.
-
-1. You may need to restart your computer for the changes to take effect. Use the following command to check the status of the driver installation:
-   ```bash
-   pnputil /e
-   ```
-
-   This command will show a list of installed driver packages.
-
 ## Variant 2: using Device Manager
 
 1. **Plug in the Device:** First, make sure the device for which you want to install the driver is connected to your computer. It should be recognized as an unknown device or have an error indicator in Device Manager.
@@ -143,3 +104,43 @@ This is the best option for regular users that just want to install the drivers 
 
 9. **Verify Installation:**
    - After installation, check Device Manager to ensure the driver is listed under the appropriate category without any warnings or errors. If the device is listed correctly, the driver installation was successful.
+
+
+## Variant 4: using the `pnputil` command line utility
+
+1. Open a Command Prompt with administrative privileges:
+   - Press the Windows key.
+   - Type "cmd" or "Command Prompt" into the search bar.
+   - Right-click on "Command Prompt" and select "Run as administrator."
+
+1. Type the following command to list all the installed drivers and their package names:
+   ```bash
+   pnputil /enum-drivers
+   ```
+   
+   This will provide a list of installed drivers along with their published names, which you will need to identify the correct driver package.
+
+1. Locate the INF file for the driver you want to install. INF files are typically located in the driver package folder or on the manufacturer's website.
+
+1. Install the driver using the `pnputil` utility. Replace `path\to\driver.inf` with the actual path to the INF file of the driver you want to install:
+   ```bash
+   pnputil /add-driver "path\to\driver.inf"
+   ```
+   
+   If you want to specify a package name (use the published name from step 2), you can do so with the `/package` option:
+   ```bash
+   pnputil /add-driver "path\to\driver.inf" /package PackageName
+   ```
+   
+   If the driver package contains multiple INF files, you should specify the INF file that corresponds to the specific hardware component you want to update.
+
+1. Windows may prompt you to confirm the installation of the driver. Confirm and proceed with the installation if prompted.
+
+1. After a successful installation, you should see a message indicating that the driver has been added.
+
+1. You may need to restart your computer for the changes to take effect. Use the following command to check the status of the driver installation:
+   ```bash
+   pnputil /e
+   ```
+
+   This command will show a list of installed driver packages.
