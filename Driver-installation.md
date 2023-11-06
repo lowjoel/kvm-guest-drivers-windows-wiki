@@ -1,4 +1,3 @@
-# WIP!!!
 # Driver installation
 
 Remember to be cautious when installing or updating drivers, as improper installation or incompatible drivers can cause system instability. Make sure you have the correct driver for your hardware, and back up your data before making any significant changes to your system.
