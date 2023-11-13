@@ -23,8 +23,7 @@ This is the best option for regular users that just want to install the drivers 
    - In File Explorer, locate and click on the virtual CD/DVD drive where the Virtio-Win ISO is mounted. It should be listed under "This PC" or "Computer."
 
 6. **Launch the Installation Wizard:**
-   - Inside the Virtio-Win ISO, look for the `virtio-win-guest-tools` folder.
-   - Within that folder, locate the `virtio-win-guest-tools-xxx.exe` (where "xxx" represents the version number) file and run it by double-clicking it. This file contains the Virtio-Win drivers and the Installation Wizard.
+   - Inside the Virtio-Win ISO, locate the `virtio-win-guest-tools-xxx.exe` (where "xxx" represents the version number) file and run it by double-clicking it. This file contains the Virtio-Win drivers and the Installation Wizard.
 
 7. **Select Components:**
    - The Virtio-Win Installation Wizard will launch. It will prompt you to select the components you want to install, such as network drivers, storage drivers, and balloon drivers. You can choose to install all available drivers by default or select specific components based on your requirements. Click "Install" to proceed.
@@ -65,7 +64,7 @@ This is the best option for regular users that just want to install the drivers 
    - In the "Where do you want to install Windows?" window, you may not see your hard disk or storage device listed if it's not recognized. Click "Load Driver."
 
 9. **Load Drivers:**
-   - The "Load Driver" window will open. Insert the USB flash drive containing the driver files you prepared earlier.
+   - The "Load Driver" window will open. Insert the USB flash drive or attach the Virtio-Win ISO containing the driver files you prepared earlier.
 
 10. **Browse for Drivers:**
     - Click "Browse" and navigate to the USB flash drive to find the driver files you downloaded. Select the appropriate driver and click "Next."
