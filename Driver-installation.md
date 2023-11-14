@@ -40,7 +40,7 @@ This is the best option for regular users that just want to install the drivers 
 ## Installing drivers required for Windows installation, such as hard disk drivers
 
 1. **Prepare Driver Files:**
-   - Before you begin the Windows installation, you'll need to have the necessary driver files for your hardware component ready. This usually includes the hard disk or storage controller drivers. Download these drivers from the manufacturer's website and save them to a USB flash drive.
+   - Before you begin the Windows installation, you'll need to have the necessary driver files for your hardware component ready. This usually includes the hard disk or storage controller drivers. Download these drivers from the manufacturer's website.
 
 2. **Insert Windows Installation Media:**
    - Insert the Windows installation media (DVD or USB) into your computer and boot from it. You may need to access the BIOS/UEFI settings to set the boot order to prioritize the installation media.
