@@ -10,7 +10,7 @@
 # Additional steps for driver development
 
 1. Copy Windows 11, version 22H2 EWDK to a local directory
-   * Download Windows 11, version 22H2 (updated May 2023) EWDK with Visual Studio Buildtools 17.1.6 ISO (https://go.microsoft.com/fwlink/?linkid=2237475) and mount it (let's say to `E:\`).
+   * Download Windows 11, version 22H2 EWDK (released October 24, 2023) with Visual Studio Buildtools 17.1.5 ISO (https://go.microsoft.com/fwlink/?linkid=2249942) and mount it (let's say to `E:\`).
    * copy entire content to local directory (c:\ewdk11_22h2): `mkdir c:\ewdk11_22h2 && xcopy /e e:\* c:\ewdk11_22h2`
    * unmount and delete Windows 11 22H2 EWDK ISO file
    * `set EWDK11_22H2_DIR=c:\ewdk11_22h2`
