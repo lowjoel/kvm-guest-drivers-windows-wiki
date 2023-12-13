@@ -3,10 +3,10 @@
 # Steps required for building
 
 ## For Windows 10, Windows Server 2022
-1.  Download Windows 11 21H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2202360) and mount it (let's say to E:\\). You can download the ISO to the host and connect it to the VM as CD-ROM.
+1.  Download Windows 11 21H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2202360) and mount it (let's say to `E:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
 
 ## For Windows 11
-2. Download Windows 11 22H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2249942) and mount it (let's say to F:\\). You can download the ISO to the host and connect it to the VM as CD-ROM.
+2. Download Windows 11 22H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2249942) and mount it (let's say to `F:\`). You can download the ISO to the host and connect it to the VM as CD-ROM.
 
 ## General steps
 
