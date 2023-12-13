@@ -10,7 +10,7 @@
 
 ## General steps
 
-3. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases/tag/v1.10) with "Core", "Developer" and "Kernel Developer" features enabled.
+3. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases/tag/v2.0) with "Core", "Developer" and "Kernel Developer" features enabled.
 4. Download and install CPDK 8.0 (https://www.microsoft.com/en-us/download/details.aspx?id=30688).
 5. Download and install .NET Framework version 4.8 (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer). Windows Server 2022 and Windows 11 don't need it.
 6. Change directory to `kvm-guest-drivers-windows`.
