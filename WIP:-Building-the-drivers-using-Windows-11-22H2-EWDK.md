@@ -2,10 +2,25 @@
 
 # Steps required for building
 
-**TBD**
-* Run `build_AllNoSdv.bat [Win8|Win8.1|Win10|Win11]` depending on your Windows version.
- - Choose `Win10` for Windows Server 2022
- - Choose `Win11` for Windows 11.
+## For Windows 10, Windows Server 2022
+1.  Download Windows 11 21H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2202360) and mount it (let's say to E:\\). You can download the ISO to the host and connect it to the VM as CD-ROM.
+
+## For Windows 11
+2. Download Windows 11 22H2 EWDK ISO (https://go.microsoft.com/fwlink/?linkid=2249942) and mount it (let's say to F:\\). You can download the ISO to the host and connect it to the VM as CD-ROM.
+
+## General steps
+
+3. Download and install WinFSP (https://github.com/billziss-gh/winfsp/releases/tag/v1.10) with "Core", "Developer" and "Kernel Developer" features enabled.
+4. Download and install CPDK 8.0 (https://www.microsoft.com/en-us/download/details.aspx?id=30688).
+5. Download and install .NET Framework version 4.8 (https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer). Windows Server 2022 and Windows 11 don't need it.
+6. Change directory to `kvm-guest-drivers-windows`.
+7. Run `build_AllNoSdv.bat [Win10|Win11]` depending on your Windows version.
+   - Choose `Win10` for Windows 10, Windows Server 2022 (x86, x64, ARM64)
+   - Choose `Win11` for Windows 11 (x86 (several UMD only), x64, ARM64)
+8. Run `Tools\signAll.bat` to sign drivers. Loading of test-signed drivers must be enabled on your system (https://docs.microsoft.com/en-us/windows-hardware/drivers/install/the-testsigning-boot-configuration-option).
+9. Find drivers/services in folders named `Install` inside driver folders.
+
+
 
 # Additional steps for driver development
 
@@ -58,10 +73,13 @@ The building of drivers for the following operating systems is not supported by 
    * Windows XP / Server 2003
    * Windows Vista / Server 2008
    * Windows 7 / Server 2008R2 
+   * Windows 8 / Server 2012
+   * Windows 8.1 / Server 2012R2
 
 Note: latest tag that supports the building of drivers for legacy operating systems:
    * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/08.03.2021-last-buldable-point-XP
    * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/02.12.2021-last-buildable-point-Win7
+   * https://github.com/virtio-win/kvm-guest-drivers-windows/releases/tag/01.11.2023-last-buildable-point-Win8
 
 Run `buildAll.bat` for the complete build including SDV. Note that an SDV build takes a long time.
 
