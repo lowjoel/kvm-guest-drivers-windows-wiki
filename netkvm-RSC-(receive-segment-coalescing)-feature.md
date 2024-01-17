@@ -1,40 +1,91 @@
-### RSC explanation
-See also https://technet.microsoft.com/en-us/library/hh997024(v=ws.11).aspx
+### Introduction to Receive Segment Coalescing (RSC)
 
-RSC is hardware-based receive acceleration machanism, reducing CPU load by offloading task of combining multiple fragments of large payload to single packet which is delivered to OS network stack. When network transfer utilize large packet, this feature can provide significant throughput boost (as an example, change from 7Gbps to 35 Gbps in host-to-guest data transfer was measured in throughput tests).
+RSC is a hardware-based receive acceleration mechanism, reducing CPU load by offloading the task of combining multiple fragments of a large payload to single packet which is then delivered to the OS network stack. When network transfers utilize large packets, this can provide a significant boost in throughput. One benchmark showed a 5x increase (from 7Gbps to 35 Gbps) in host-to-guest data throughput.
 
-RSC is supported by network driver starting from 2012 server (or Win8 client). However, it will function only if allowed by setting of host network device responsible to data transfer to guest system (usually TAP device).
+RSC is supported by the network stack starting from Windows Server 2012/Windows 8.
 
-### RSC-related settings
-There are 2 scenarios when RSC can improve network performance:
-* Host-to-guest data transfer or guest-to-guest data transfer inside the same host. In this setup the data comes to guest system via its TAP device. If transmitting network adapter is able to offload large data segments, they can be moved to receiving side without being fragmented. This requires receiving TAP to enable its TX checksumming and TX LSO capability.
-* Data coming from external network to guest system. In this case there are two network components responsible for segments coalescing: receiving physical NIC and TAP of guest network adapter. Actual coalescing job is executed by the NIC (based on its coalescing setting) and further delivery to guest system is executed via the TAP and requires the same TX checksumming and TX LSO to be enabled.
+See https://technet.microsoft.com/en-us/library/hh997024(v=ws.11).aspx for further details.
 
-### Examples:
-**Query TAP offload configuration**
+### RSC for Virtualized Workloads
 
-`ethtool -k <tap name>`
+RSC is especially effective in virtualized workloads in these circumstances:
 
-Note: tap name is the parameter passed in qemu command-line as `ifname=<name>` in `-netdev` configuration for the tap
+* Host-to-guest data transfer or guest-to-guest data transfer inside the same host. In this setup the data comes to guest system via its TAP device. If the transmitting network adapter is able to offload large data segments, those segments can be sent to the guest without fragmentation. This requires the receiving TAP to offload its TX checksumming and TX Large Segment Offload responsibilities.
+* Data originating from an external network to the guest. In this case there are two network components responsible for segment coalescing: the receiving physical NIC and the TAP of the guest's network adapter. The first pass of coalescing segments is performed by the NIC (based on its own coalescing setting). Delivery of the segments to the guest is via the TAP and subject to the same considations as the host-to-guest scenario above.
 
-Typical output:
+### Requirements for RSC
+
+RSC can be enabled when all of the following are true:
+
+1. On the host:
+   1. The TAP device has the TX checksum offload enabled
+   2. TCP Segmentation Offload is enabled
+2. On the guest:
+   1. The virtio driver is installed
+   2. RSC is operational within the guest network stack.
+
+#### Host configuration
+
+The host configuration can be verified by running
+
+```bash
+ethtool -k <TAP device name>
+```
+
+The TAP device name is the QEmu command-line parameter `ifname=<TAP device name>` in `-netdev`.
+
+A working host output would be:
+
 * **tx-checksumming: on**
-*	tx-checksum-ipv4: off [fixed]
-*	tx-checksum-ip-generic: on
-*	tx-checksum-ipv6: off [fixed]
-*	tx-checksum-fcoe-crc: off [fixed]
-*	tx-checksum-sctp: off [fixed]
+  * tx-checksum-ipv4: off [fixed]
+  * tx-checksum-ip-generic: on
+  * tx-checksum-ipv6: off [fixed]
+  * tx-checksum-fcoe-crc: off [fixed]
+  * tx-checksum-sctp: off [fixed]
 * **tcp-segmentation-offload: on**
-*	tx-tcp-segmentation: on
-*	tx-tcp-ecn-segmentation: off [requested on]
-*	tx-tcp6-segmentation: on
+  * tx-tcp-segmentation: on
+  * tx-tcp-ecn-segmentation: off [requested on]
+  * tx-tcp6-segmentation: on
 
-**Query NIC coalescing configuration**
+Further performance benefit can be gained by performing NIC coalescing:
 
-`ethtool -c <nic name>`
+```bash
+ethtool -c <nic name>
+```
 
 Typical output:
-* rx-usecs: 3 (This parameter sets maximal time for NIC combine received fragments into large one)
+
+* **rx-usecs: 3**
+
+This parameter configures the maximum allowed time between packets for the NIC to combine in hardware.
+
+#### Guest configuration
+
+The guest configuration can be verified in PowerShell:
+
+```powershell
+Get-NetAdapterRsc | Format-List
+```
+
+A working guest output would be:
+
+* Name: Ethernet
+* InterfaceDescription: Red Hat VirtIO Ethernet Adapter
+* IPv4Enabled: True
+* IPv6Enabled: True
+* IPv4Supported: True
+* IPv6Supported: True
+* **IPv4OperationalState: True**
+* **IPv6OperationalState: True**
+* **IPv4FailureReason: NoFailure**
+* **IPv6FailureReason: NoFailure**
+
+Possible failure reason causes:
+
+* Capability: The host has not been configured for RSC.
+* WFPCompatibility: check your firewall, try disabling it. The Windows Filtering Platform is preventing RSC from being enabled.
+
+See https://github.com/virtio-win/kvm-guest-drivers-windows/issues/1026 for more details.
 
 ### HCK RSC tests
 
