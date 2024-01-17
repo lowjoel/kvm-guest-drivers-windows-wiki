@@ -59,6 +59,8 @@ Typical output:
 
 This parameter configures the maximum allowed time between packets for the NIC to combine in hardware.
 
+**Note:** The unavailability of these features on the host may not indicate a misconfiguration on the host. The guest needs to request this functionality too.
+
 #### Guest configuration
 
 The guest configuration can be verified in PowerShell:
